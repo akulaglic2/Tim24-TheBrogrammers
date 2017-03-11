@@ -1,6 +1,6 @@
 # Tim-24-TheBrogrammers
 Članovi Tima:
 
-Dino Ćosić
+Dino Ćosić \n
 Zerina Fazlagić
 Ammar Ćesko
