@@ -1,8 +1,9 @@
-# Tim-24-TheBrogrammers
-Članovi Tima:
+## Tim-24-TheBrogrammers
+![alt text](http://i63.tinypic.com/256uyap.png)
+### Članovi Tima:
 
-Dino Ćosić 
+* Dino Ćosić 
 
-Zerina Fazlagić
+* Zerina Fazlagić
 
-Ammar Ćesko
+* Ammar Ćesko
