@@ -1,5 +1,9 @@
 # Tim-24-TheBrogrammers
 ![alt text](http://i63.tinypic.com/256uyap.png)
+
+
+#  Projekat Kino
+
 ## Članovi Tima:
 
 * Dino Ćosić 
@@ -7,10 +11,6 @@
 * Zerina Fazlagić
 
 * Ammar Ćesko
-
-
-
-# Projekat Kino
 
 ## Opis teme
 - Ova aplikacija je namijenjena svim osobama koje su ljubitelji filmova, te odlazaka u kino. U sklopu ovog projekta razvijamo aplikaciju koja ce omoguciti svim ljubiteljima kina, dobre zabave i najnovijih naslova da na najlaksi i najefikasniji nacin uzivaju u onome sto vole. Prvobitna ideja jeste da ovaj sistem pomogne svim korisnicima
