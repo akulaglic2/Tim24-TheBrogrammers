@@ -43,6 +43,7 @@ On unosi naziv filma, te jos neke dodatne atribute. Kao rezultat aplikacija prik
 * Prikaz informacija o filmovima koji se prikazuju, najava premijera te pregled svih posebnih ponuda i paketa
 * Kupovina ulaznica direktno, te uz pomoc aplikacije
 * Kupovina pica i hrane
+* Prodaja karata, pica i hrane (u slucaju da je prijavljeni korisnik ustvari uposlenik)
 * Ponistavanje karata pri ulasku
 * Kontrolisanje rada uposlenih
 * Pregled statistickih podataka(posjecenost i ostali podaci)
