@@ -23,7 +23,11 @@ nase aplikacije. Ostvarenje ove ideje se ogleda u tome sto aplikacija omogucava 
 
 **Kupovina karata** - Ovaj proces moguce je obaviti na dva nacina. Prvi nacin je dolazak korisnika u kino te kupovina ulaznice i placanje direktno novcem. Ovo je najjednostavniji nacin. Drugi nacin je da se karte kupe uz pomoc aplikacije. Prvo korisnik uz pomoc aplikacije, nakon sto se prijavio sa korisnickim imenom i lozinkom, unosi naslov filma, vrijeme prikazivanja i kolicinu karata. Nakon toga biraju se slobodna mjesta u kinu. Iduci korak jeste slanje zahtjeva putem aplikacije, a nakon toga dobija odgovor da li je moguce izvrsiti njegov zahtjev. Ukoliko jeste potrebno je da izvrsi uplatu nakon koje ce dobiti generisani kod za preuzimanje karata, a u suprotnom dobija poruku da nije moguce izvrsiti takvu transakciju.
 
-**Prodaja karata** - Druga strana aplikacije namijenjena je uposlenicima. Uz pomoc svojih korisnickih podataka, potrebno je da im se omoguci prijava. Nakon prijave pomocu određenog interfejsa omogucava im se da rade svoj posao, odnosno prodaju karte, hranu i pice.
+**Prodaja karata** - Druga strana aplikacije namijenjena je uposlenicima. Uz pomoc svojih korisnickih podataka, potrebno je da im se omoguci prijava. Nakon prijave pomocu određenog interfejsa omogucava im se da rade svoj posao.
+
+**Prodaja hrane i pića** - Još jedna strana aplikacije namijenjena uposlenicima. Slično kao proces iznad omogućava prodaju hrane i pića.
+
+**Prodaja posebnih paketa** - Ovaj proces omogućava uposleniku da vrši prodaju posebnih paketa koji mogu biti bolja opcija za korisnike.
 
 **Find My Movie** - Korisnik uz pomoc ovog procesa nase aplikacije moze na jednostavan i zanimljiv nacin pronaci kino dvoranu, koja se nalazi u sklopu kina koje koristi nasu aplikaciju. Ona treba da zadovoljava sve zahtjeve korisnika. Na ovaj nacin osobama koje koriste aplikaciju omogucava se da u skladu sa njihovim zahtjevima dobiju najbolju uslugu. Aplikacija ce pored  navedenih zahtjeva iskoristiti i lokaciju korisnika, ako je to moguce, te ga uputiti na lokaciju najblize kino dvorane koja zadovoljava sve navedeno.
 
@@ -41,6 +45,7 @@ nase aplikacije. Ostvarenje ove ideje se ogleda u tome sto aplikacija omogucava 
 * Dodavanje termina tehnickog pregleda opreme, kontrola istih
 * Kupovina ulaznica direktno, te uz pomoc aplikacije
 * Kupovina pica i hrane
+* Provjera i azuriranje stanja hrane i pića, te posebnih paketa
 * Prodaja karata, pica i hrane (u slucaju da je prijavljen uposlenik)
 * Ponistavanje karata pri ulasku
 * Kontrolisanje rada uposlenih
