@@ -9,15 +9,12 @@
 
     <Grid>
         <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="Black" Offset="0"/>
-                <GradientStop Color="#FF3758C7" Offset="1"/>
-            </LinearGradientBrush>
+            <ImageBrush Stretch="Fill" ImageSource="Assets/pozadina.jpg"/>
         </Grid.Background>
         <ScrollViewer HorizontalAlignment="Left" Height="520" Margin="10,110,0,0" VerticalAlignment="Top" Width="340" ZoomMode="Enabled">
 
-            <ListView x:Name="listViewPosebnaPonuda" Height="510" Width="291">
-                <ListViewItem Content="Maxi Combo Paket" Foreground="White" Height="60" BorderBrush="White">
+            <ListView x:Name="listViewPosebnaPonuda" Height="469" Width="261">
+                <ListViewItem Content="Maxi Combo Paket" Foreground="White" Height="60" BorderBrush="White" Width="261">
                     <ListViewItem.Background>
                         <ImageBrush AlignmentX="Right" Stretch="Uniform" ImageSource="Assets/popcornLogo.png" Opacity="0.6"/>
                     </ListViewItem.Background>
@@ -60,7 +57,10 @@
 
             </ListView>
         </ScrollViewer>
-        <TextBlock x:Name="textBlock"  HorizontalAlignment="Stretch" Margin="10,81,68,0" TextWrapping="Wrap" Text="Posebna ponuda" VerticalAlignment="Top" Height="44" Width="282" FontSize="30" FontFamily="Cambria" Foreground="White"/>
-
+        <Button x:Name="button" Content="" HorizontalAlignment="Left" Margin="10,53,0,0" VerticalAlignment="Top" Height="52" Width="44" RenderTransformOrigin="-0.316,0.481">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="Assets/backIcon.png"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Page>

@@ -9,10 +9,7 @@
 
     <Grid>
         <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="Black" Offset="0"/>
-                <GradientStop Color="#FF3758C7" Offset="1"/>
-            </LinearGradientBrush>
+            <ImageBrush Stretch="Fill" ImageSource="Assets/pozadina.jpg"/>
         </Grid.Background>
         <RelativePanel HorizontalAlignment="Left" Height="291" Margin="10,146,0,0" VerticalAlignment="Top" Width="340">           
             <Image x:Name="slikaKorisnika" Source="Assets\vasRacunIkona.png" HorizontalAlignment="Center" Height="104" Margin="10,74,-121,-78" VerticalAlignment="Top" Width="111" />
@@ -22,6 +19,10 @@
             <TextBlock x:Name="textBlockIme" Foreground="White" FontFamily="Cambria" HorizontalAlignment="Left" Margin="189,137,-213,-139" TextWrapping="Wrap" Text="ime" VerticalAlignment="Top" RenderTransformOrigin="2.486,-1"/>
             <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Vase Informacije" FontFamily="Cambria" Foreground="White"  VerticalAlignment="Top" Margin="59,49,-59.333,-49"/>
         </RelativePanel>
-
+        <Button x:Name="button" Content="" HorizontalAlignment="Left" Margin="15,55,0,0" VerticalAlignment="Top" Height="52" Width="44">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="Assets/backIcon.png"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Page>

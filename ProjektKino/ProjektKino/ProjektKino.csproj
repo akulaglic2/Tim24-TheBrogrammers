@@ -95,17 +95,32 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FrameFindMyMovie.xaml.cs">
+      <DependentUpon>FrameFindMyMovie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FrameGost.xaml.cs">
+      <DependentUpon>FrameGost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FrameKartica.xaml.cs">
+      <DependentUpon>FrameKartica.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FrameKorisnik.xaml.cs">
       <DependentUpon>FrameKorisnik.xaml</DependentUpon>
     </Compile>
     <Compile Include="FrameKupovinaKarte.xaml.cs">
       <DependentUpon>FrameKupovinaKarte.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FrameNaslovna.xaml.cs">
+      <DependentUpon>FrameNaslovna.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FramePosebnaPonuda.xaml.cs">
       <DependentUpon>FramePosebnaPonuda.xaml</DependentUpon>
     </Compile>
     <Compile Include="FrameRacun.xaml.cs">
       <DependentUpon>FrameRacun.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FrameRegistracija.xaml.cs">
+      <DependentUpon>FrameRegistracija.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -119,6 +134,8 @@
     <None Include="ProjektKino_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\add.png" />
+    <Content Include="Assets\backIcon.png" />
     <Content Include="Assets\cinemaLogoIk.jpg" />
     <Content Include="Assets\familyday.gif" />
     <Content Include="Assets\GentlemansNight.jpg" />
@@ -129,7 +146,9 @@
     <Content Include="Assets\ladiesnight.jpg" />
     <Content Include="Assets\logo.png" />
     <Content Include="Assets\logoFit.png" />
+    <Content Include="Assets\odabirMjesta.png" />
     <Content Include="Assets\popcornLogo.png" />
+    <Content Include="Assets\pozadina.jpg" />
     <Content Include="Assets\studentnight.jpg" />
     <Content Include="Assets\vasRacunIkona.png" />
     <Content Include="Properties\Default.rd.xml" />
@@ -146,6 +165,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="FrameFindMyMovie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FrameGost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FrameKartica.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FrameKorisnik.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -154,11 +185,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="FrameNaslovna.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FramePosebnaPonuda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FrameRacun.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FrameRegistracija.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
