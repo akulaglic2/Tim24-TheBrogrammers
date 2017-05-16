@@ -120,6 +120,12 @@
     <Compile Include="Views\FramePosebnaPonuda.xaml.cs">
       <DependentUpon>FramePosebnaPonuda.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\FrameRacun.xaml.cs">
+      <DependentUpon>FrameRacun.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrameRegistracija.xaml.cs">
+      <DependentUpon>FrameRegistracija.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -206,6 +212,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\FramePosebnaPonuda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FrameRacun.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FrameRegistracija.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
