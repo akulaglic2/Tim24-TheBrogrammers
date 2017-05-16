@@ -99,6 +99,27 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\FrameFindMyMovie.xaml.cs">
+      <DependentUpon>FrameFindMyMovie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrameGost.xaml.cs">
+      <DependentUpon>FrameGost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrameKartica.xaml.cs">
+      <DependentUpon>FrameKartica.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrameKorisnik.xaml.cs">
+      <DependentUpon>FrameKorisnik.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrameKupiKartu.xaml.cs">
+      <DependentUpon>FrameKupiKartu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrameNaslovna.xaml.cs">
+      <DependentUpon>FrameNaslovna.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FramePosebnaPonuda.xaml.cs">
+      <DependentUpon>FramePosebnaPonuda.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -107,6 +128,41 @@
     <None Include="ProjekatKino_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\add.png" />
+    <Content Include="Assets\add1.png" />
+    <Content Include="Assets\AddFilm.png" />
+    <Content Include="Assets\adfilm.png" />
+    <Content Include="Assets\back.png" />
+    <Content Include="Assets\backIcon.png" />
+    <Content Include="Assets\backKKKKKKKKKKKK.png" />
+    <Content Include="Assets\cinemaLogoIk.jpg" />
+    <Content Include="Assets\dodajicon.png" />
+    <Content Include="Assets\hrana.jpg" />
+    <Content Include="Assets\hrananovo.png" />
+    <Content Include="Assets\icon-person-add-512.png" />
+    <Content Include="Assets\ikonaFindMyMovie.png" />
+    <Content Include="Assets\ikonaHomePage.png" />
+    <Content Include="Assets\ikonaKarte.png" />
+    <Content Include="Assets\ikonaPosebnaPonuda.png" />
+    <Content Include="Assets\karteToITo.png" />
+    <Content Include="Assets\kartice.png" />
+    <Content Include="Assets\kino1.png" />
+    <Content Include="Assets\logo.png" />
+    <Content Include="Assets\logo1.png" />
+    <Content Include="Assets\logoFit.png" />
+    <Content Include="Assets\mjesto.png" />
+    <Content Include="Assets\neka slika.png" />
+    <Content Include="Assets\obrisi.png" />
+    <Content Include="Assets\obrisi2.png" />
+    <Content Include="Assets\odabirMjesta.png" />
+    <Content Include="Assets\podesavanja.png" />
+    <Content Include="Assets\popcornLogo.png" />
+    <Content Include="Assets\pos.png" />
+    <Content Include="Assets\posebni.png" />
+    <Content Include="Assets\posebninovo.png" />
+    <Content Include="Assets\pozadina.jpg" />
+    <Content Include="Assets\remove.png" />
+    <Content Include="Assets\vasRacunIkona.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -125,10 +181,37 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\FrameFindMyMovie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FrameGost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FrameKartica.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FrameKorisnik.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FrameKupiKartu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FrameNaslovna.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FramePosebnaPonuda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="Views\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
