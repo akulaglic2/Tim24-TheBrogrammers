@@ -11,7 +11,7 @@
         <Grid.Background>
             <ImageBrush Stretch="Fill" ImageSource="Assets/pozadina.jpg"/>
         </Grid.Background>
-        <Rectangle Name="opcijaKupiKartu" HorizontalAlignment="Left" Height="100" Margin="10,215,0,0" Stroke="White" VerticalAlignment="Top" Width="340" Tapped="opcijaKupiKartu_Tapped">
+        <Rectangle Name="opcijaKupiKartu" HorizontalAlignment="Left" Height="100" Margin="10,215,0,0" Stroke="White" VerticalAlignment="Top" Width="340" >
             <Rectangle.Fill>
                 <ImageBrush Stretch="Uniform" ImageSource="Assets/ikonaKarte.png"/>
             </Rectangle.Fill>
@@ -19,7 +19,7 @@
         </Rectangle>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,295,0,0" TextWrapping="Wrap" Text="Kupovina karata
                    " VerticalAlignment="Top" Foreground="White"/>
-        <Rectangle Name="opcijaVasRacun" HorizontalAlignment="Left" Height="85" Stroke="White" VerticalAlignment="Top" Width="119" Margin="231,125,0,0" Tapped="opcijaVasRacun_Tapped">
+        <Rectangle Name="opcijaVasRacun" HorizontalAlignment="Left" Height="85" Stroke="White" VerticalAlignment="Top" Width="119" Margin="231,125,0,0" >
             <Rectangle.Fill>
                 <ImageBrush Stretch="Uniform" ImageSource="Assets/vasRacunIkona.png"/>
             </Rectangle.Fill>
@@ -31,7 +31,7 @@
             </Rectangle.Fill>
         </Rectangle>
         <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="10,400,0,0" TextWrapping="Wrap" Text="Naslovna" VerticalAlignment="Top" Foreground="White"/>
-        <Rectangle HorizontalAlignment="Left" Height="100" Margin="10,425,0,0" Stroke="White" VerticalAlignment="Top" Width="340" Tapped="Rectangle_Tapped">
+        <Rectangle HorizontalAlignment="Left" Height="100" Margin="10,425,0,0" Stroke="White" VerticalAlignment="Top" Width="340">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="Assets\ikonaPosebnaPonuda.png" Stretch="Uniform"/>
             </Rectangle.Fill>
