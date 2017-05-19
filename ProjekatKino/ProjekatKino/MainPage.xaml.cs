@@ -26,5 +26,7 @@ namespace ProjekatKino
         {
             this.InitializeComponent();
         }
+
+        
     }
 }
