@@ -10,23 +10,12 @@ namespace ProjekatKino.Models
     public class Proizvod
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int idProizvoda;
+        public int proizvodID { get; set; }
         public string naziv;
         public double cijena;
         public string vrsta;
 
-        public int IdProizvoda
-        {
-            get
-            {
-                return idProizvoda;
-            }
-
-            set
-            {
-                idProizvoda = value;
-            }
-        }
+        
 
         public string Naziv
         {

@@ -10,7 +10,7 @@ namespace ProjekatKino.Models
     public class Korisnik : Osoba
         {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int idKorisnika { get; set; }// primary key
+        public int korisnikID { get; set; }// primary key
         public int brojKreditneKartice { get; set; }
         public DateTime expDate { get; set; }
         public string imeVlasnikaKartice { get; set; }
@@ -19,7 +19,7 @@ namespace ProjekatKino.Models
         public Korisnik (string ime, string prezime, string adresa, string email, string username, string password, DateTime datumRodjenja, int idKorisnika, int brojKreditneKartice, DateTime expDate, string imeVlasnikaKartice, string prezimeVlasnikaKartice)
                 : base(ime, prezime, adresa, email, username, password, datumRodjenja)
             {
-            this.idKorisnika = idKorisnika;
+            this.korisnikID = korisnikID;
             this.brojKreditneKartice = brojKreditneKartice;
             this.expDate = expDate;
             this.imeVlasnikaKartice = imeVlasnikaKartice;

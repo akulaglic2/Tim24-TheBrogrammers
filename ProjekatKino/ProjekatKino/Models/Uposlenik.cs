@@ -10,13 +10,13 @@ namespace ProjekatKino.Models
     public class Uposlenik : Osoba
         {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int idUposlenika { get; set; } // primary key
+        public int uposlenikID { get; set; } // primary key
         public int maticniBroj { get; set; }
 
-        public Uposlenik (string ime, string prezime, string adresa, string email, string username, string password, DateTime datumRodjenja, int idUposlenika, int maticniBroj)
+        public Uposlenik (string ime, string prezime, string adresa, string email, string username, string password, DateTime datumRodjenja, int uposlenikID, int maticniBroj)
                 : base(ime, prezime, adresa, email, username, password, datumRodjenja)
             {
-            this.idUposlenika = idUposlenika;
+            this.uposlenikID = uposlenikID;
             this.maticniBroj = maticniBroj;
             }
 

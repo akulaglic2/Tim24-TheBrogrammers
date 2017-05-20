@@ -6,51 +6,39 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ProjekatKino.Models
-{
-    public class KinoDvorana
     {
+    public class KinoDvorana
+        {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int idKinoDvorane;
-       public  string adresa;
+        public int kinoDvoranaID { get; set; }
+        public string adresa;
         public int brojMjesta;
 
-        public int IdKinoDvorane
-        {
-            get
-            {
-                return idKinoDvorane;
-            }
-
-            set
-            {
-                idKinoDvorane = value;
-            }
-        }
 
         public string Adresa
-        {
-            get
             {
+            get
+                {
                 return adresa;
-            }
+                }
 
             set
-            {
+                {
                 adresa = value;
+                }
             }
-        }
 
         public int BrojMjesta
-        {
-            get
             {
+            get
+                {
                 return brojMjesta;
-            }
+                }
 
             set
-            {
+                {
                 brojMjesta = value;
+                }
             }
         }
     }
-}

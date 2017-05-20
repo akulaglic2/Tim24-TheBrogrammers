@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -10,24 +11,14 @@ namespace ProjekatKino.Models
     public class PosebnePonude
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int idPosebnePonude;
+        [Key]
+        public int posebnaPonudaID { get; set; }
         public string naziv;
         public double cijena;
         public string velicina;
         public List<Proizvod> sadrzaj;
 
-        public int IdPosebnePonude
-        {
-            get
-            {
-                return idPosebnePonude;
-            }
-
-            set
-            {
-                idPosebnePonude = value;
-            }
-        }
+       
 
         public string Naziv
         {
