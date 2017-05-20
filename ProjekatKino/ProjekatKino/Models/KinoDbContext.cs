@@ -15,6 +15,12 @@ namespace ProjekatKino.Models
         public DbSet<Korisnik> korisnici { get; set; }
         public DbSet<Uposlenik> uposlenici { get; set; }
         public DbSet<Film> filmovi { get; set; }
+        public DbSet<KinoDvorana> kinoDvorane { get; set; }
+        public DbSet<Karta> karte { get; set; }
+        public DbSet<Proizvod> proizvodi { get; set; }
+        public DbSet<Projekcija> projekcije { get; set; }
+        public DbSet<PosebnePonude> posebnePonude { get; set; }
+
 
 
         protected override void OnConfiguring (DbContextOptionsBuilder optionsBuilder)
