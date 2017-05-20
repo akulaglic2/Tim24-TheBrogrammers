@@ -26,6 +26,99 @@ namespace ProjekatKino.ViewModels
         private int idUposlenika;
         private int maticniBroj;
         private DateTime datumRodjenja;
+
+        public string Ime
+            {
+            get
+                {
+                return ime;
+                }
+
+            set
+                {
+                ime = value;
+                NotifyPropertyChanged("Ime");
+                }
+            }
+
+        public string Prezime
+            {
+            get
+                {
+                return prezime;
+                NotifyPropertyChanged("Prezime");
+                }
+
+            set
+                {
+                prezime = value;
+                }
+            }
+
+        public string Email
+            {
+            get
+                {
+                return email;
+                }
+
+            set
+                {
+                email = value;
+                }
+            }
+
+        public string Adresa
+            {
+            get
+                {
+                return adresa;
+                }
+
+            set
+                {
+                adresa = value;
+                }
+            }
+
+        public int IdUposlenika
+            {
+            get
+                {
+                return idUposlenika;
+                }
+
+            set
+                {
+                idUposlenika = value;
+                }
+            }
+
+        public int MaticniBroj
+            {
+            get
+                {
+                return maticniBroj;
+                }
+
+            set
+                {
+                maticniBroj = value;
+                }
+            }
+
+        public DateTime DatumRodjenja
+            {
+            get
+                {
+                return datumRodjenja;
+                }
+
+            set
+                {
+                datumRodjenja = value;
+                }
+            }
         #endregion
 
 
