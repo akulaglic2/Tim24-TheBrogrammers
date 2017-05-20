@@ -10,47 +10,17 @@ namespace ProjekatKino.Models
     public class KinoDvorana
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int idKinoDvorane;
-       public  string adresa;
-        public int brojMjesta;
+        public int idKinoDvorane { get; set; }
+       public  string adresa { get; set; }
+        public int brojMjesta { get; set; }
 
-        public int IdKinoDvorane
+        public KinoDvorana(int idKinoDvorane,string adresa, int brojMjesta)
         {
-            get
-            {
-                return idKinoDvorane;
-            }
-
-            set
-            {
-                idKinoDvorane = value;
-            }
+            this.idKinoDvorane = idKinoDvorane;
+            this.adresa = adresa;
+            this.brojMjesta = brojMjesta;
         }
 
-        public string Adresa
-        {
-            get
-            {
-                return adresa;
-            }
-
-            set
-            {
-                adresa = value;
-            }
-        }
-
-        public int BrojMjesta
-        {
-            get
-            {
-                return brojMjesta;
-            }
-
-            set
-            {
-                brojMjesta = value;
-            }
-        }
+       
     }
 }

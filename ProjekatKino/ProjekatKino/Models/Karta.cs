@@ -10,47 +10,18 @@ namespace ProjekatKino.Models
     public class Karta
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int idKarte;
-        public double cijenaKarte;
-        public int idProjekcije;
+        public int idKarte { get; set; }
+        public double cijenaKarte { get; set; }
+        public int idProjekcije { get; set; }
 
-        public int IdKarte
+        public Karta(int idKarte,double cijenaKarte, int idProjekcije)
         {
-            get
-            {
-                return idKarte;
-            }
-
-            set
-            {
-                idKarte = value;
-            }
+            this.idKarte = idKarte;
+            this.cijenaKarte = cijenaKarte;
+            this.idProjekcije = idProjekcije;
+       
         }
 
-        public double CijenaKarte
-        {
-            get
-            {
-                return cijenaKarte;
-            }
-
-            set
-            {
-                cijenaKarte = value;
-            }
-        }
-
-        public int IdProjekcije
-        {
-            get
-            {
-                return idProjekcije;
-            }
-
-            set
-            {
-                idProjekcije = value;
-            }
-        }
+        
     }
 }

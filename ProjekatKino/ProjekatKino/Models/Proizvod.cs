@@ -10,61 +10,17 @@ namespace ProjekatKino.Models
     public class Proizvod
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int idProizvoda;
-        public string naziv;
-        public double cijena;
-        public string vrsta;
+        public int idProizvoda { get; set; }
+        public string naziv { get; set; }
+        public double cijena { get; set; }
+        public string vrsta { get; set; }
 
-        public int IdProizvoda
-        {
-            get
-            {
-                return idProizvoda;
-            }
-
-            set
-            {
-                idProizvoda = value;
-            }
-        }
-
-        public string Naziv
-        {
-            get
-            {
-                return naziv;
-            }
-
-            set
-            {
-                naziv = value;
-            }
-        }
-
-        public double Cijena
-        {
-            get
-            {
-                return cijena;
-            }
-
-            set
-            {
-                cijena = value;
-            }
-        }
-
-        public string Vrsta
-        {
-            get
-            {
-                return vrsta;
-            }
-
-            set
-            {
-                vrsta = value;
-            }
-        }
+        Proizvod(int idProizvoda,string naziv,double cijena,string vrsta) {
+            this.idProizvoda = idProizvoda;
+            this.naziv = naziv;
+            this.cijena = cijena;
+            this.vrsta = vrsta;
+ }
+       
     }
 }

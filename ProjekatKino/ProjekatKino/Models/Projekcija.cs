@@ -10,68 +10,18 @@ namespace ProjekatKino.Models
    public class Projekcija
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int idProjekcija;
-        public DateTime vrijemePrikazivanja;
-        public int idKinoDvorane;
-        public int idFilma;
+        public int idProjekcija { get; set; }
+        public DateTime vrijemePrikazivanja { get; set; }
+        public int idKinoDvorane { get; set; }
+        public int idFilma { get; set; }
 
         public Projekcija(int idProjekcija,DateTime vrijemePrikazivanja,int idKinoDvorane,int idFilma){
             this.idProjekcija = idProjekcija;
             this.vrijemePrikazivanja = vrijemePrikazivanja;
             this.idKinoDvorane = idKinoDvorane;
-            this.IdFilma = idFilma;
+            this.idFilma = idFilma;
             
                 }
-        public int IdProjekcija
-        {
-            get
-            {
-                return idProjekcija;
-            }
-
-            set
-            {
-                idProjekcija = value;
-            }
-        }
-
-        public DateTime VrijemePrikazivanja
-        {
-            get
-            {
-                return vrijemePrikazivanja;
-            }
-
-            set
-            {
-                vrijemePrikazivanja = value;
-            }
-        }
-
-        public int IdKinoDvorane
-        {
-            get
-            {
-                return idKinoDvorane;
-            }
-
-            set
-            {
-                idKinoDvorane = value;
-            }
-        }
-
-        public int IdFilma
-        {
-            get
-            {
-                return idFilma;
-            }
-
-            set
-            {
-                idFilma = value;
-            }
-        }
+        
     }
 }
