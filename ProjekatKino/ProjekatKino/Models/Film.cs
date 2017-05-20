@@ -27,7 +27,7 @@ namespace ProjekatKino.Models
             this.reziser = reziser;
             this.opisFilma = opisFilma;
             }
-
+        public Film() { }
 
         }
 

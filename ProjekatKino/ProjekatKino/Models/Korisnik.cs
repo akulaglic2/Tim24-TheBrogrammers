@@ -25,7 +25,7 @@ namespace ProjekatKino.Models
             this.imeVlasnikaKartice = imeVlasnikaKartice;
             this.prezimeVlasnikaKartice = prezimeVlasnikaKartice;
             }
-
+        public Korisnik() { }
        
         }
     }

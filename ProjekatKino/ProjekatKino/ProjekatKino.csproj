@@ -103,6 +103,7 @@
       <DependentUpon>20170520125118_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\KinoDbContextModelSnapshot.cs" />
+    <Compile Include="Models\DefaultPodaci.cs" />
     <Compile Include="Models\Film.cs" />
     <Compile Include="Models\Karta.cs" />
     <Compile Include="Models\KinoDbContext.cs" />

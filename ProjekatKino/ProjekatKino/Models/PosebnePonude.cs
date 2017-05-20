@@ -29,7 +29,7 @@ namespace ProjekatKino.Models
 
         }
 
-       
+        public PosebnePonude() { }
 
         
     }

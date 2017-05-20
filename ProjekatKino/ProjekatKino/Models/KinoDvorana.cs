@@ -22,6 +22,7 @@ namespace ProjekatKino.Models
             this.brojMjesta = brojMjesta;
         }
 
+        public KinoDvorana() { }
 
     }
 

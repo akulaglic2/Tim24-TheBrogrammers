@@ -20,6 +20,7 @@ namespace ProjekatKino.Models
             this.maticniBroj = maticniBroj;
             }
 
+        public Uposlenik() { }
 
         }
     }

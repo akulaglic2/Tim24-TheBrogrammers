@@ -21,6 +21,7 @@ namespace ProjekatKino.Models
             this.idProjekcije = idProjekcije;
 
         }
+        public Karta() { }
 
 
     }

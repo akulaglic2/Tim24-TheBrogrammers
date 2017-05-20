@@ -10,7 +10,7 @@ using Windows.Storage;
 
 namespace ProjekatKino.Models
     {
-    class KinoDbContext : DbContext
+    public class KinoDbContext : DbContext
         {
         public DbSet<Korisnik> korisnici { get; set; }
         public DbSet<Uposlenik> uposlenici { get; set; }

@@ -25,5 +25,7 @@ namespace ProjekatKino.Models
             this.idKinoDvorane = idKinoDvorane;
 
         }
+
+        public Projekcija() { }
     }
     }

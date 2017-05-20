@@ -23,6 +23,7 @@ namespace ProjekatKino.Models
             this.vrsta = vrsta;
 
         }
+        public Proizvod() { }
 
 
         
