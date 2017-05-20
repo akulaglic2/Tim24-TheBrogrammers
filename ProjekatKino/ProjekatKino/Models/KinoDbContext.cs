@@ -31,11 +31,8 @@ namespace ProjekatKino.Models
             optionsBuilder.UseSqlite($"Data source={databaseFilePath}");
             }
         protected override void OnModelCreating (ModelBuilder modelBuilder)
-            {
-            //jedno od polja je image da se zna šta je zapravo predstavlja byte[]
-            //modelBuilder.Entity<Korisnik>().Property(p => p.Slika).HasColumnType("image");
-            //modelBuilder.Entity<Uposlenik>().Property(p => p.Slika).HasColumnType("image");
-            }
+            { }
+
 
         }
     }

@@ -10,14 +10,14 @@ namespace ProjekatKino.Models
     public abstract class Osoba
         {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        //idOsobe
-        private string ime;
-        private string prezime;
-        private string adresa;
-        private string email;
-        private string username;
-        private string password;
-        private DateTime datumRodjenja;
+        //idOsobe mozda potrebno dodati
+        public string ime { get; set; }
+        public string prezime { get; set; }
+        public string adresa { get; set; }
+        public string email { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
+        public DateTime datumRodjenja { get; set; }
 
         public Osoba ()
             { }
@@ -33,95 +33,6 @@ namespace ProjekatKino.Models
             this.datumRodjenja = datumRodjenja;
             }
 
-        public string Ime
-            {
-            get
-                {
-                return ime;
-                }
 
-            set
-                {
-                ime = value;
-                }
-            }
-
-        public string Prezime
-            {
-            get
-                {
-                return prezime;
-                }
-
-            set
-                {
-                prezime = value;
-                }
-            }
-
-        public string Adresa
-            {
-            get
-                {
-                return adresa;
-                }
-
-            set
-                {
-                adresa = value;
-                }
-            }
-
-        public string Email
-            {
-            get
-                {
-                return email;
-                }
-
-            set
-                {
-                email = value;
-                }
-            }
-
-        public string Username
-            {
-            get
-                {
-                return username;
-                }
-
-            set
-                {
-                username = value;
-                }
-            }
-
-        public string Password
-            {
-            get
-                {
-                return password;
-                }
-
-            set
-                {
-                password = value;
-                }
-            }
-
-        public DateTime DatumRodjenja
-            {
-            get
-                {
-                return datumRodjenja;
-                }
-
-            set
-                {
-                datumRodjenja = value;
-                }
-            }
         }
     }

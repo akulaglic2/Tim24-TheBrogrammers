@@ -10,11 +10,11 @@ namespace ProjekatKino.Models
     public class Korisnik : Osoba
         {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        private int idKorisnika; // primary key
-        private int brojKreditneKartice;
-        private DateTime expDate;
-        private string imeVlasnikaKartice;
-        private string prezimeVlasnikaKartice;
+        public int idKorisnika { get; set; }// primary key
+        public int brojKreditneKartice { get; set; }
+        public DateTime expDate { get; set; }
+        public string imeVlasnikaKartice { get; set; }
+        public string prezimeVlasnikaKartice { get; set; }
 
         public Korisnik (string ime, string prezime, string adresa, string email, string username, string password, DateTime datumRodjenja, int idKorisnika, int brojKreditneKartice, DateTime expDate, string imeVlasnikaKartice, string prezimeVlasnikaKartice)
                 : base(ime, prezime, adresa, email, username, password, datumRodjenja)
@@ -26,69 +26,6 @@ namespace ProjekatKino.Models
             this.prezimeVlasnikaKartice = prezimeVlasnikaKartice;
             }
 
-        public int IdKorisnika
-            {
-            get
-                {
-                return idKorisnika;
-                }
-
-            set
-                {
-                idKorisnika = value;
-                }
-            }
-
-        public int BrojKreditneKartice
-            {
-            get
-                {
-                return brojKreditneKartice;
-                }
-
-            set
-                {
-                brojKreditneKartice = value;
-                }
-            }
-
-        public DateTime ExpDate
-            {
-            get
-                {
-                return expDate;
-                }
-
-            set
-                {
-                expDate = value;
-                }
-            }
-
-        public string ImeVlasnikaKartice
-            {
-            get
-                {
-                return imeVlasnikaKartice;
-                }
-
-            set
-                {
-                imeVlasnikaKartice = value;
-                }
-            }
-
-        public string PrezimeVlasnikaKartice
-            {
-            get
-                {
-                return prezimeVlasnikaKartice;
-                }
-
-            set
-                {
-                prezimeVlasnikaKartice = value;
-                }
-            }
+       
         }
     }
