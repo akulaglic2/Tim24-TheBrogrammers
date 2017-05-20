@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -10,75 +11,26 @@ namespace ProjekatKino.Models
     public class PosebnePonude
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int idPosebnePonude;
+        [Key]
+        public int posebnaPonudaID { get; set; }
         public string naziv;
         public double cijena;
         public string velicina;
         public List<Proizvod> sadrzaj;
 
-        public int IdPosebnePonude
+      public  PosebnePonude(int posebnaPonudaID,string naziv,double cijena,string velicina, List<Proizvod> sadrzaj)
         {
-            get
-            {
-                return idPosebnePonude;
-            }
+            this.posebnaPonudaID = posebnaPonudaID;
+            this.naziv= naziv;
+            this.cijena = cijena;
+            this.velicina = velicina;
+            this.sadrzaj = sadrzaj;
 
-            set
-            {
-                idPosebnePonude = value;
-            }
+
         }
 
-        public string Naziv
-        {
-            get
-            {
-                return naziv;
-            }
+       
 
-            set
-            {
-                naziv = value;
-            }
-        }
-
-        public double Cijena
-        {
-            get
-            {
-                return cijena;
-            }
-
-            set
-            {
-                cijena = value;
-            }
-        }
-
-        public string Velicina
-        {
-            get
-            {
-                return velicina;
-            }
-
-            set
-            {
-                velicina = value;
-            }
-        }
-
-        public List<Proizvod> Sadrzaj
-        {
-            get
-            {
-                return sadrzaj;
-            }
-
-            set
-            {
-                sadrzaj = value;
-            }
-        }
+        
     }
 }

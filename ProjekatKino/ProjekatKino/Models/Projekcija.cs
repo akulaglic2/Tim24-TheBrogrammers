@@ -6,22 +6,24 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ProjekatKino.Models
-{
-   public class Projekcija
+    {
+    public class Projekcija
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int idProjekcija { get; set; }
-        public DateTime vrijemePrikazivanja { get; set; }
-        public int idKinoDvorane { get; set; }
-        public int idFilma { get; set; }
 
-        public Projekcija(int idProjekcija,DateTime vrijemePrikazivanja,int idKinoDvorane,int idFilma){
-            this.idProjekcija = idProjekcija;
+
+        public int projekcijaID { get; set; }
+        public DateTime vrijemePrikazivanja;
+        public int idKinoDvorane;
+        public int idFilma;
+
+
+        public Projekcija(int projekcijaID, DateTime vrijemePrikazivanja, int idKinoDvorane, int idFilma)
+        {
+            this.projekcijaID = projekcijaID;
             this.vrijemePrikazivanja = vrijemePrikazivanja;
             this.idKinoDvorane = idKinoDvorane;
-            this.idFilma = idFilma;
-            
-                }
-        
+
+        }
     }
-}
+    }

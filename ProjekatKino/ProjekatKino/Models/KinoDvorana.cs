@@ -6,21 +6,23 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ProjekatKino.Models
-{
-    public class KinoDvorana
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int idKinoDvorane { get; set; }
-       public  string adresa { get; set; }
-        public int brojMjesta { get; set; }
-
-        public KinoDvorana(int idKinoDvorane,string adresa, int brojMjesta)
+    public class KinoDvorana
         {
-            this.idKinoDvorane = idKinoDvorane;
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
+        public int kinoDvoranaID { get; set; }
+        public string adresa;
+        public int brojMjesta;
+
+        public KinoDvorana(int kinoDvoranaID, string adresa, int brojMjesta)
+        {
+            this.kinoDvoranaID = kinoDvoranaID;
             this.adresa = adresa;
             this.brojMjesta = brojMjesta;
         }
 
-       
+
     }
-}
+
+    }

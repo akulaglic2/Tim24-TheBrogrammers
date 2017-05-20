@@ -10,18 +10,18 @@ namespace ProjekatKino.Models
     public class Karta
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int idKarte { get; set; }
+        public int kartaID { get; set; }
         public double cijenaKarte { get; set; }
         public int idProjekcije { get; set; }
 
-        public Karta(int idKarte,double cijenaKarte, int idProjekcije)
+        public Karta(int kartaID, double cijenaKarte, int idProjekcije)
         {
-            this.idKarte = idKarte;
+            this.kartaID = kartaID;
             this.cijenaKarte = cijenaKarte;
             this.idProjekcije = idProjekcije;
-       
+
         }
 
-        
+
     }
 }
