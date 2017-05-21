@@ -16,6 +16,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+
+
 namespace ProjekatKino
     {
     /// <summary>
@@ -33,11 +35,11 @@ namespace ProjekatKino
             this.Suspending += OnSuspending;
 
             using (var db = new Models.KinoDbContext())
-            {
+                {
                 db.Database.ApplyMigrations();
                 Models.DefaultPodaci.Initialize(db);
+                }
             }
-        }
 
 
         /// <summary>
@@ -111,6 +113,6 @@ namespace ProjekatKino
             deferral.Complete();
             }
 
-        
+
+        }
     }
-}

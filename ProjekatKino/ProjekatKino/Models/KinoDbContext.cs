@@ -31,6 +31,7 @@ namespace ProjekatKino.Models
                 //za tačnu putanju gdje se nalazi baza uraditi ovdje debug i procitati Path
                 databaseFilePath = Path.Combine(ApplicationData.Current.LocalFolder.Path,
                 databaseFilePath);
+                
                 }
             catch (InvalidOperationException) { }
             //Sqlite baza
