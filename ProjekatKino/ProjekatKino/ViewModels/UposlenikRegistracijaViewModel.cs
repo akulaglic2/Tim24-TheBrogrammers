@@ -26,6 +26,7 @@ namespace ProjekatKino.ViewModels
         private int idUposlenika;
         private int maticniBroj;
         private DateTime datumRodjenja;
+        #endregion
 
         public string Ime
             {
@@ -119,7 +120,7 @@ namespace ProjekatKino.ViewModels
                 datumRodjenja = value;
                 }
             }
-        #endregion
+       
 
 
 

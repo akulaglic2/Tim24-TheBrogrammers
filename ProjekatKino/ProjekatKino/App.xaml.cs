@@ -1,5 +1,7 @@
 ﻿using Microsoft.Data.Entity;
 using System;
+using ProjekatKino.Models;
+using ProjekatKino.Views;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
