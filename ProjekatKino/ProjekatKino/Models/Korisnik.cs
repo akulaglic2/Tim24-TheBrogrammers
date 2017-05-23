@@ -11,21 +11,22 @@ namespace ProjekatKino.Models
         {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int korisnikID { get; set; }// primary key
-        public int brojKreditneKartice { get; set; }
+        public Int64 brojKreditneKartice { get; set; }
         public DateTime expDate { get; set; }
+        public string vrstaKreditneKartice { get; set; }
         public string imeVlasnikaKartice { get; set; }
         public string prezimeVlasnikaKartice { get; set; }
 
-        public Korisnik (string ime, string prezime, string adresa, string email, string username, string password, DateTime datumRodjenja, int idKorisnika, int brojKreditneKartice, DateTime expDate, string imeVlasnikaKartice, string prezimeVlasnikaKartice)
+        public Korisnik (string ime, string prezime, string adresa, string email, string username, string password, DateTime datumRodjenja, Int64 brojKreditneKartice, DateTime expDate, string imeVlasnikaKartice, string prezimeVlasnikaKartice, string vrstaKreditneKartice)
                 : base(ime, prezime, adresa, email, username, password, datumRodjenja)
             {
-            this.korisnikID = korisnikID;
             this.brojKreditneKartice = brojKreditneKartice;
             this.expDate = expDate;
             this.imeVlasnikaKartice = imeVlasnikaKartice;
             this.prezimeVlasnikaKartice = prezimeVlasnikaKartice;
+            this.vrstaKreditneKartice = vrstaKreditneKartice;
             }
-        public Korisnik() { }
-       
+        public Korisnik () { }
+
         }
     }

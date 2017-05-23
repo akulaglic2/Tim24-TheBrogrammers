@@ -12,7 +12,7 @@ using System.Windows.Input;
 
 namespace ProjekatKino.ViewModels
     {
-    public class UposlenikRegistracijaViewModel : INotifyPropertyChanged
+    public class KorisnikRegistracijaViewModel : INotifyPropertyChanged
         {
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged (String info)
@@ -23,18 +23,19 @@ namespace ProjekatKino.ViewModels
                 }
             }
 
-        #region Privatni Atributi
+        #region Privatni atributi, get set
         private string ime;
         private string prezime;
         private string email;
         private string adresa;
         private string username;
         private string password;
-        private Int64 maticniBroj;
         private DateTime datumRodjenja;
-        #endregion
-
-        #region Get,Set
+        private Int64 brojKreditneKartice;
+        private DateTime expDate;
+        private string imeVlasnikaKartice;
+        private string prezimeVlasnikaKartice;
+        private string vrstaKreditneKartice;
 
         public string Ime
             {
@@ -55,7 +56,6 @@ namespace ProjekatKino.ViewModels
             get
                 {
                 return prezime;
-
                 }
 
             set
@@ -64,13 +64,25 @@ namespace ProjekatKino.ViewModels
                 NotifyPropertyChanged("Prezime");
                 }
             }
+        public string VrstaKreditneKartice
+            {
+            get
+                {
+                return vrstaKreditneKartice;
+                }
+
+            set
+                {
+                vrstaKreditneKartice = value;
+                NotifyPropertyChanged("VrstaKreditneKartice");
+                }
+            }
 
         public string Email
             {
             get
                 {
                 return email;
-
                 }
 
             set
@@ -94,34 +106,6 @@ namespace ProjekatKino.ViewModels
                 }
             }
 
-
-        public Int64 MaticniBroj
-            {
-            get
-                {
-                return maticniBroj;
-                }
-
-            set
-                {
-                maticniBroj = value;
-                NotifyPropertyChanged("MaticniBroj");
-                }
-            }
-
-        public DateTime DatumRodjenja
-            {
-            get
-                {
-                return datumRodjenja;
-                }
-
-            set
-                {
-                datumRodjenja = value;
-                NotifyPropertyChanged("DatumRodjenja");
-                }
-            }
         public string Username
             {
             get
@@ -150,25 +134,93 @@ namespace ProjekatKino.ViewModels
                 }
             }
 
+        public DateTime DatumRodjenja
+            {
+            get
+                {
+                return datumRodjenja;
+                }
+
+            set
+                {
+                datumRodjenja = value;
+                NotifyPropertyChanged("DatumRodjenja");
+                }
+            }
+
+        public long BrojKreditneKartice
+            {
+            get
+                {
+                return brojKreditneKartice;
+                }
+
+            set
+                {
+                brojKreditneKartice = value;
+                NotifyPropertyChanged("BrojKreditneKartice");
+                }
+            }
+
+        public DateTime ExpDate
+            {
+            get
+                {
+                return expDate;
+                }
+
+            set
+                {
+                expDate = value;
+                NotifyPropertyChanged("ExpDate");
+                }
+            }
+
+        public string ImeVlasnikaKartice
+            {
+            get
+                {
+                return imeVlasnikaKartice;
+                }
+
+            set
+                {
+                imeVlasnikaKartice = value;
+                NotifyPropertyChanged("ImeVlasnikaKartice");
+                }
+            }
+
+        public string PrezimeVlasnikaKartice
+            {
+            get
+                {
+                return prezimeVlasnikaKartice;
+                }
+
+            set
+                {
+                prezimeVlasnikaKartice = value;
+                NotifyPropertyChanged("PrezimeVlasnikaKartice");
+                }
+            }
         #endregion
 
         public ICommand Dodaj { get; set; }
-        public Uposlenik uposlenik { get; set; }
+        public Korisnik Korisnik { get; set; }
 
 
 
-
-        public UposlenikRegistracijaViewModel ()
+        public KorisnikRegistracijaViewModel ()
             {
-            Dodaj = new RelayCommand<object>(unosUposlenog);
+            Dodaj = new RelayCommand<object>(unosKorisnika);
             }
 
-        private async void unosUposlenog (object obj)
+        private async void unosKorisnika (object obj)
             {
             using (var db = new KinoDbContext())
                 {
-                var uneseniUposlenik = new Uposlenik(Ime, Prezime, Adresa, Email, Username, Password, Convert.ToDateTime(DatumRodjenja), MaticniBroj);
-                db.uposlenici.Add(uneseniUposlenik);
+                var uneseniKorisnik = new Korisnik(Ime, Prezime, Adresa, Email, Username, Password, Convert.ToDateTime(DatumRodjenja), BrojKreditneKartice, Convert.ToDateTime(ExpDate), ImeVlasnikaKartice, PrezimeVlasnikaKartice, VrstaKreditneKartice);
+                db.korisnici.Add(uneseniKorisnik);
                 db.SaveChanges();
 
                 var message = new MessageDialog("Uspješno je unesen novi radnik", "Unos radnika");
@@ -180,8 +232,20 @@ namespace ProjekatKino.ViewModels
                 Password = string.Empty;
                 Adresa = string.Empty;
                 Email = string.Empty;
+                BrojKreditneKartice = 0;
+                ImeVlasnikaKartice = string.Empty;
+                PrezimeVlasnikaKartice = string.Empty;
                 }
             }
+
+
+
+
+
+
+
+
+
 
 
 
