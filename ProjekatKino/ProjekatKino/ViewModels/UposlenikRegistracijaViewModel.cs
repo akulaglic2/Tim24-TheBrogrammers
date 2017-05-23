@@ -1,9 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using ProjekatKino.Helper;
 using System.Linq;
+using Windows.UI.Popups;
+using System.Threading.Tasks;
+using ProjekatKino.Models;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace ProjekatKino.ViewModels
     {
@@ -23,10 +28,13 @@ namespace ProjekatKino.ViewModels
         private string prezime;
         private string email;
         private string adresa;
-        private int idUposlenika;
+        private string username;
+        private string password;
         private int maticniBroj;
         private DateTime datumRodjenja;
         #endregion
+
+        #region Get,Set
 
         public string Ime
             {
@@ -47,12 +55,13 @@ namespace ProjekatKino.ViewModels
             get
                 {
                 return prezime;
-                NotifyPropertyChanged("Prezime");
+
                 }
 
             set
                 {
                 prezime = value;
+                NotifyPropertyChanged("Prezime");
                 }
             }
 
@@ -61,11 +70,13 @@ namespace ProjekatKino.ViewModels
             get
                 {
                 return email;
+
                 }
 
             set
                 {
                 email = value;
+                NotifyPropertyChanged("Email");
                 }
             }
 
@@ -79,21 +90,10 @@ namespace ProjekatKino.ViewModels
             set
                 {
                 adresa = value;
+                NotifyPropertyChanged("Adresa");
                 }
             }
 
-        public int IdUposlenika
-            {
-            get
-                {
-                return idUposlenika;
-                }
-
-            set
-                {
-                idUposlenika = value;
-                }
-            }
 
         public int MaticniBroj
             {
@@ -105,6 +105,7 @@ namespace ProjekatKino.ViewModels
             set
                 {
                 maticniBroj = value;
+                NotifyPropertyChanged("MaticniBroj");
                 }
             }
 
@@ -118,9 +119,68 @@ namespace ProjekatKino.ViewModels
             set
                 {
                 datumRodjenja = value;
+                NotifyPropertyChanged("DatumRodjenja");
                 }
             }
-       
+        public string Username
+            {
+            get
+                {
+                return username;
+                }
+
+            set
+                {
+                username = value;
+                NotifyPropertyChanged("Username");
+                }
+            }
+
+        public string Password
+            {
+            get
+                {
+                return password;
+                }
+
+            set
+                {
+                password = value;
+                NotifyPropertyChanged("Password");
+                }
+            }
+
+        #endregion
+
+        public ICommand Dodaj { get; set; }
+        public Uposlenik uposlenik { get; set; }
+
+
+
+        public UposlenikRegistracijaViewModel ()
+            {
+            //
+            }
+
+        private async void unosUposlenog (object obj)
+            {
+            using (var db = new KinoDbContext())
+                {
+                var uneseniUposlenik = new Uposlenik(Ime, Prezime, Adresa, Email, Username, Password, Convert.ToDateTime(DatumRodjenja), MaticniBroj);
+                db.uposlenici.Add(uneseniUposlenik);
+                db.SaveChanges();
+
+                var message = new MessageDialog("Uspješno je unesen novi radnik", "Unos radnika");
+                await message.ShowAsync();
+
+                Ime = string.Empty;
+                Prezime = string.Empty;
+                Username = string.Empty;
+                Password = string.Empty;
+                Adresa = string.Empty;
+                Email = string.Empty;
+                }
+            }
 
 
 

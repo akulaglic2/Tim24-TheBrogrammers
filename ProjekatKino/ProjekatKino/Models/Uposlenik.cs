@@ -13,10 +13,10 @@ namespace ProjekatKino.Models
         public int uposlenikID { get; set; } // primary key
         public int maticniBroj { get; set; }
 
-        public Uposlenik (string ime, string prezime, string adresa, string email, string username, string password, DateTime datumRodjenja, int uposlenikID, int maticniBroj)
+        public Uposlenik (string ime, string prezime, string adresa, string email, string username, string password, DateTime datumRodjenja, int maticniBroj)
                 : base(ime, prezime, adresa, email, username, password, datumRodjenja)
             {
-            this.uposlenikID = uposlenikID;
+            
             this.maticniBroj = maticniBroj;
             }
 
