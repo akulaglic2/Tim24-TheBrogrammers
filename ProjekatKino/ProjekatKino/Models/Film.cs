@@ -18,9 +18,9 @@ namespace ProjekatKino.Models
         public string opisFilma { get; set; }
         // public List<String> glavneUloge;
 
-        public Film (int idFilma, string naziv, string zanr, int duzinaTrajanja, string reziser, string opisFilma)
+        public Film (string naziv, string zanr, int duzinaTrajanja, string reziser, string opisFilma)
             {
-            this.filmID = filmID;
+            
             this.naziv = naziv;
             this.zanr = zanr;
             this.duzinaTrajanja = duzinaTrajanja;
