@@ -219,6 +219,28 @@ namespace ProjekatKino.ViewModels
             {
             using (var db = new KinoDbContext())
                 {
+                // validacija unosa 
+                if (Ime == "" || Prezime == "" || Adresa == "" || Email == "" || Username == "" || Password == "" || DatumRodjenja == null || BrojKreditneKartice == null || ExpDate == null || ImeVlasnikaKartice == "" || PrezimeVlasnikaKartice == "")
+                    {
+                    var messageDialog = new MessageDialog("Morate popuniti sva polja!");
+                    await messageDialog.ShowAsync();
+                    }
+                if (Username.Length < 7 || Username.Length > 22)
+                    {
+                    var messageDialog = new MessageDialog("Username mora imati najmanje 7, a najvise 22 karaktera");
+                    await messageDialog.ShowAsync();
+                    }
+                if (Password.Length < 8 || Password.Length > 22)
+                    {
+                    var messageDialog = new MessageDialog("Password mora imati najmanje 8, a najvise 22 karaktera");
+                    await messageDialog.ShowAsync();
+                    }
+                if (DateTime.Compare(ExpDate, DateTime.Today) <= 0)
+                    {
+                    var messageDialog = new MessageDialog("Datum isteka kartice nije validan!");
+                    await messageDialog.ShowAsync();
+                    }
+
                 var uneseniKorisnik = new Korisnik(Ime, Prezime, Adresa, Email, Username, Password, Convert.ToDateTime(DatumRodjenja), BrojKreditneKartice, Convert.ToDateTime(ExpDate), ImeVlasnikaKartice, PrezimeVlasnikaKartice, VrstaKreditneKartice);
                 db.korisnici.Add(uneseniKorisnik);
                 db.SaveChanges();

@@ -6,23 +6,25 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ProjekatKino.Models
-{
-    public class Karta
     {
+    public class Karta
+        {
+        //public static double cijenaKarte = 7.5;
+
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int kartaID { get; set; }
         public double cijenaKarte { get; set; }
         public int idProjekcije { get; set; }
 
-        public Karta(int kartaID, double cijenaKarte, int idProjekcije)
-        {
+        public Karta (int kartaID, double cijenaKarte, int idProjekcije)
+            {
             this.kartaID = kartaID;
             this.cijenaKarte = cijenaKarte;
             this.idProjekcije = idProjekcije;
 
+            }
+        public Karta () { }
+
+
         }
-        public Karta() { }
-
-
     }
-}

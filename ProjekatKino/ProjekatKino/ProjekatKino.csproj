@@ -108,6 +108,7 @@
     <Compile Include="Migrations\KinoDbContextModelSnapshot.cs" />
     <Compile Include="Models\DefaultPodaci.cs" />
     <Compile Include="Models\Film.cs" />
+    <Compile Include="Models\IKupovina.cs" />
     <Compile Include="Models\Karta.cs" />
     <Compile Include="Models\KinoDbContext.cs" />
     <Compile Include="Models\KinoDvorana.cs" />

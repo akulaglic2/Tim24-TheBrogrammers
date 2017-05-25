@@ -167,6 +167,23 @@ namespace ProjekatKino.ViewModels
             {
             using (var db = new KinoDbContext())
                 {
+                // validacija unosa
+                if (Ime == "" || Prezime == "" || Adresa == "" || Email == "" || Username == "" || Password == "" || DatumRodjenja == null || MaticniBroj == null)
+                    {
+                    var messageDialog = new MessageDialog("Morate popuniti sva polja!");
+                    await messageDialog.ShowAsync();
+                    }
+                if (Username.Length < 7 || Username.Length > 22)
+                    {
+                    var messageDialog = new MessageDialog("Username mora imati najmanje 7, a najvise 22 karaktera");
+                    await messageDialog.ShowAsync();
+                    }
+                if (Password.Length < 8 || Password.Length > 22)
+                    {
+                    var messageDialog = new MessageDialog("Password mora imati najmanje 8, a najvise 22 karaktera");
+                    await messageDialog.ShowAsync();
+                    }
+
                 var uneseniUposlenik = new Uposlenik(Ime, Prezime, Adresa, Email, Username, Password, Convert.ToDateTime(DatumRodjenja), MaticniBroj);
                 db.uposlenici.Add(uneseniUposlenik);
                 db.SaveChanges();

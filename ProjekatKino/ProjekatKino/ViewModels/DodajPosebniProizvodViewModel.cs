@@ -10,17 +10,17 @@ using System.Windows.Input;
 using Windows.UI.Popups;
 
 namespace ProjekatKino.ViewModels
-{
-   public class DodajPosebniProizvodViewModel : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void NotifyPropertyChanged(String info)
+    public class DodajPosebniProizvodViewModel : INotifyPropertyChanged
         {
-            if (PropertyChanged != null)
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyPropertyChanged (String info)
             {
+            if (PropertyChanged != null)
+                {
                 PropertyChanged(this, new PropertyChangedEventArgs(info));
+                }
             }
-        }
 
         #region Privatni Atributi
         private string naziv;
@@ -36,87 +36,87 @@ namespace ProjekatKino.ViewModels
         #region Get,Set
 
         public string Naziv
-        {
-            get
             {
+            get
+                {
                 return naziv;
-            }
+                }
 
             set
-            {
+                {
                 naziv = value;
                 NotifyPropertyChanged("Naziv");
+                }
             }
-        }
 
         public double Cijena
-        {
-            get
             {
+            get
+                {
                 return cijena;
-            }
+                }
 
             set
-            {
+                {
                 cijena = value;
                 NotifyPropertyChanged("Cijena");
+                }
             }
-        }
 
         public string Velicina
-        {
-            get
             {
+            get
+                {
                 return velicina;
-            }
+                }
 
             set
-            {
+                {
                 velicina = value;
                 NotifyPropertyChanged("Velicina");
+                }
             }
-        }
         public string Sadrzaj1
-        {
-            get
             {
+            get
+                {
                 return sadrzaj1;
-            }
+                }
 
             set
-            {
+                {
                 sadrzaj1 = value;
                 NotifyPropertyChanged("Sadrzaj1");
+                }
             }
-        }
 
         public string Sadrzaj2
-        {
-            get
             {
+            get
+                {
                 return sadrzaj2;
-            }
+                }
 
             set
-            {
+                {
                 sadrzaj2 = value;
                 NotifyPropertyChanged("Sadrzaj2");
+                }
             }
-        }
 
         public string KratakOpis
-        {
-            get
             {
+            get
+                {
                 return kratakOpis;
-            }
+                }
 
             set
-            {
+                {
                 kratakOpis = value;
                 NotifyPropertyChanged("KratakOpis");
+                }
             }
-        }
 
 
         #endregion
@@ -124,33 +124,45 @@ namespace ProjekatKino.ViewModels
         public ICommand Dodaj { get; set; }
         public PosebnePonude posebne { get; set; }
 
-      
 
-        public DodajPosebniProizvodViewModel()
-        {
-            Dodaj = new RelayCommand<object>(unosProizvoda);
-        }
 
-        private async void unosProizvoda(object obj)
-        {
-            using (var db = new KinoDbContext())
+        public DodajPosebniProizvodViewModel ()
             {
-                var unesiProizvod = new PosebnePonude(Naziv, Cijena, Velicina,Sadrzaj1,Sadrzaj2,KratakOpis);
+            Dodaj = new RelayCommand<object>(unosProizvoda);
+            }
+
+        private async void unosProizvoda (object obj)
+            {
+            using (var db = new KinoDbContext())
+                {
+                // validacija unosa 
+                if (Naziv == "" || Cijena == null || Velicina == "" || Sadrzaj1 == "" || Sadrzaj2 == "" || KratakOpis == "")
+                    {
+                    var messageDialog = new MessageDialog("Morate popuniti sva polja!");
+                    await messageDialog.ShowAsync();
+                    }
+                if (KratakOpis.Length < 10)
+                    {
+                    var messageDialog = new MessageDialog("Prekratak opis!");
+                    await messageDialog.ShowAsync();
+                    }
+
+                var unesiProizvod = new PosebnePonude(Naziv, Cijena, Velicina, Sadrzaj1, Sadrzaj2, KratakOpis);
                 db.posebnePonude.Add(unesiProizvod);
                 db.SaveChanges();
 
-                var message = new MessageDialog("Uspješno je unesen nova posebna ponuda", "Unos posebne ponude");
+                var message = new MessageDialog("Uspješno je unesena nova posebna ponuda", "Unos posebne ponude");
                 await message.ShowAsync();
 
                 Naziv = string.Empty;
                 Cijena = 0;
                 Velicina = string.Empty;
-                Sadrzaj1= string.Empty;
-                Sadrzaj2= string.Empty;
-                KratakOpis= string.Empty;
+                Sadrzaj1 = string.Empty;
+                Sadrzaj2 = string.Empty;
+                KratakOpis = string.Empty;
 
 
+                }
             }
         }
     }
-}

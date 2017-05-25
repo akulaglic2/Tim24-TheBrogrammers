@@ -47,7 +47,7 @@ namespace ProjekatKino.ViewModels
         private async void prodajHranu(object obj)
         {
             
-                var message = new MessageDialog("Uspješno ste prodaj hranu!", "Prodaja hrane uspješna");
+            var message = new MessageDialog("Uspješno ste prodaj hranu!", "Prodaja hrane uspješna");
             await message.ShowAsync();
             Naziv = string.Empty;
                 
