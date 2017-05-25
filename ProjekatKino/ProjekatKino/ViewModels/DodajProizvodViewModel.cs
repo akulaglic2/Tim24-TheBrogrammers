@@ -86,6 +86,17 @@ namespace ProjekatKino.ViewModels
             Dodaj = new RelayCommand<object>(unosProizvoda);
             }
 
+        //public bool daLiJeBroj (string s) u slucaju da samo int cijena bude, koristimo pri validiranju
+        //    {
+        //    char[] niz = s.ToCharArray();
+        //    for (int i = 0; i < niz.Length; i++)
+        //        {
+        //        if (!char.IsDigit(niz[i]))
+        //            return false;
+        //        }
+        //    return true;
+        //    }
+
         private async void unosProizvoda (object obj)
             {
             using (var db = new KinoDbContext())
