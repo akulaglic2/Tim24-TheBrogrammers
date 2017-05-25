@@ -119,8 +119,20 @@
     <Compile Include="Models\Uposlenik.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\DodajFilmViewModel.cs" />
+    <Compile Include="ViewModels\DodajPosebniProizvodViewModel.cs" />
+    <Compile Include="ViewModels\DodajProizvodViewModel.cs" />
+    <Compile Include="ViewModels\FindMyMovieViewModel.cs" />
     <Compile Include="ViewModels\KorisnikRegistracijaViewModel.cs" />
+    <Compile Include="ViewModels\KupiKartuViewModel.cs" />
+    <Compile Include="ViewModels\ObrisiUposlenogVIewModel.cs" />
+    <Compile Include="ViewModels\ProdajaHraneViewModel.cs" />
     <Compile Include="ViewModels\UposlenikRegistracijaViewModel.cs" />
+    <Compile Include="Views\AdimPocetna.xaml.cs" />
+    <Compile Include="Views\AdminDodajFilm.xaml.cs" />
+    <Compile Include="Views\AdminDodajProizvod.xaml.cs" />
+    <Compile Include="Views\AdminDodajUposlenog.xaml.cs" />
+    <Compile Include="Views\AdminObrisiUposlenog.xaml.cs" />
+    <Compile Include="Views\AdminTehnicki.xaml.cs" />
     <Compile Include="Views\FrameFindMyMovie.xaml.cs">
       <DependentUpon>FrameFindMyMovie.xaml</DependentUpon>
     </Compile>
@@ -142,12 +154,17 @@
     <Compile Include="Views\FramePosebnaPonuda.xaml.cs">
       <DependentUpon>FramePosebnaPonuda.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\FrameProdajaHrane.xaml.cs" />
+    <Compile Include="Views\FrameProdajaKarata.xaml.cs" />
+    <Compile Include="Views\FrameProdajaPosebnih.xaml.cs" />
     <Compile Include="Views\FrameRacun.xaml.cs">
       <DependentUpon>FrameRacun.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\FrameRegistracija.xaml.cs">
       <DependentUpon>FrameRegistracija.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\RegistrujKorisnika.xaml.cs" />
+    <Compile Include="Views\UposlenikPocetna.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

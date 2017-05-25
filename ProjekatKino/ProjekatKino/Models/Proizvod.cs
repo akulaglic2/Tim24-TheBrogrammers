@@ -16,8 +16,8 @@ namespace ProjekatKino.Models
         public double cijena { get; set; }
         public string vrsta { get; set; }
 
-        public Proizvod(int proizvodID, string naziv, double cijena, string vrsta) {
-            this.proizvodID = proizvodID;
+        public Proizvod(string naziv, double cijena, string vrsta) {
+            
             this.naziv = naziv;
             this.cijena = cijena;
             this.vrsta = vrsta;

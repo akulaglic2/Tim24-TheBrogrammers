@@ -10,8 +10,8 @@ namespace ProjekatKino.Models
     {
         public static void Initialize(KinoDbContext context)
         {
-            Proizvod p = new Proizvod(1, "kola", 3, "mala");
-            Proizvod p2 = new Proizvod(2, "kokice", 3, "male");
+            Proizvod p = new Proizvod("kola", 3, "mala");
+            Proizvod p2 = new Proizvod("kokice", 3, "male");
             if (!context.filmovi.Any())
             {
                 context.filmovi.AddRange(

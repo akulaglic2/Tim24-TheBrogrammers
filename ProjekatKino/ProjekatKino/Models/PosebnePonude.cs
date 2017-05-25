@@ -16,15 +16,19 @@ namespace ProjekatKino.Models
         public string naziv;
         public double cijena;
         public string velicina;
-        public List<Proizvod> sadrzaj;
+        public string sadrzaj1;
+        public string sadrzaj2;
+        public string kratakOpis;
 
-      public  PosebnePonude(int posebnaPonudaID,string naziv,double cijena,string velicina, List<Proizvod> sadrzaj)
+      public  PosebnePonude(string naziv,double cijena,string velicina, string sadrzaj1, string sadrzaj2, string kratakOpis)
         {
-            this.posebnaPonudaID = posebnaPonudaID;
+            
             this.naziv= naziv;
             this.cijena = cijena;
             this.velicina = velicina;
-            this.sadrzaj = sadrzaj;
+            this.sadrzaj1 = sadrzaj1;
+            this.sadrzaj2 = sadrzaj2;
+            this.kratakOpis = kratakOpis;
 
 
         }
