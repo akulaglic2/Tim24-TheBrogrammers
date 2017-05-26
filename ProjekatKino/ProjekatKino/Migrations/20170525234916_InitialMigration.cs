@@ -14,7 +14,7 @@ namespace ProjekatKinoMigrations
                 columns: table => new
                     {
                     filmID = table.Column(type: "INTEGER", nullable: false),
-                    // .Annotation("Sqlite:Autoincrement", true),
+                    //.Annotation("Sqlite:Autoincrement", true),
                     duzinaTrajanja = table.Column(type: "INTEGER", nullable: false),
                     naziv = table.Column(type: "TEXT", nullable: true),
                     opisFilma = table.Column(type: "TEXT", nullable: true),
@@ -30,7 +30,7 @@ namespace ProjekatKinoMigrations
                 columns: table => new
                     {
                     kartaID = table.Column(type: "INTEGER", nullable: false),
-                    // .Annotation("Sqlite:Autoincrement", true),
+                    //.Annotation("Sqlite:Autoincrement", true),
                     cijenaKarte = table.Column(type: "REAL", nullable: false),
                     idProjekcije = table.Column(type: "INTEGER", nullable: false)
                     },
@@ -43,9 +43,7 @@ namespace ProjekatKinoMigrations
                 columns: table => new
                     {
                     kinoDvoranaID = table.Column(type: "INTEGER", nullable: false),
-                    //  .Annotation("Sqlite:Autoincrement", true),
-                    Adresa = table.Column(type: "TEXT", nullable: true),
-                    BrojMjesta = table.Column(type: "INTEGER", nullable: false)
+                    //.Annotation("Sqlite:Autoincrement", true)
                     },
                 constraints: table =>
                 {
@@ -56,7 +54,7 @@ namespace ProjekatKinoMigrations
                 columns: table => new
                     {
                     korisnikID = table.Column(type: "INTEGER", nullable: false),
-                    // .Annotation("Sqlite:Autoincrement", true),
+                    //.Annotation("Sqlite:Autoincrement", true),
                     adresa = table.Column(type: "TEXT", nullable: true),
                     brojKreditneKartice = table.Column(type: "INTEGER", nullable: false),
                     datumRodjenja = table.Column(type: "TEXT", nullable: false),
@@ -67,7 +65,8 @@ namespace ProjekatKinoMigrations
                     password = table.Column(type: "TEXT", nullable: true),
                     prezime = table.Column(type: "TEXT", nullable: true),
                     prezimeVlasnikaKartice = table.Column(type: "TEXT", nullable: true),
-                    username = table.Column(type: "TEXT", nullable: true)
+                    username = table.Column(type: "TEXT", nullable: true),
+                    vrstaKreditneKartice = table.Column(type: "TEXT", nullable: true)
                     },
                 constraints: table =>
                 {
@@ -78,24 +77,32 @@ namespace ProjekatKinoMigrations
                 columns: table => new
                     {
                     posebnaPonudaID = table.Column(type: "INTEGER", nullable: false),
-                    //  .Annotation("Sqlite:Autoincrement", true),
-                    Cijena = table.Column(type: "REAL", nullable: false),
-                    Naziv = table.Column(type: "TEXT", nullable: true),
-                    Velicina = table.Column(type: "TEXT", nullable: true)
+                    //.Annotation("Sqlite:Autoincrement", true)
                     },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_PosebnePonude", x => x.posebnaPonudaID);
                 });
             migration.CreateTable(
+                name: "Proizvod",
+                columns: table => new
+                    {
+                    proizvodID = table.Column(type: "INTEGER", nullable: false),
+                    //.Annotation("Sqlite:Autoincrement", true),
+                    cijena = table.Column(type: "REAL", nullable: false),
+                    naziv = table.Column(type: "TEXT", nullable: true),
+                    vrsta = table.Column(type: "TEXT", nullable: true)
+                    },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Proizvod", x => x.proizvodID);
+                });
+            migration.CreateTable(
                 name: "Projekcija",
                 columns: table => new
                     {
-                    projekcijaID = table.Column(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", "true"),
-                    IdFilma = table.Column(type: "INTEGER", nullable: false),
-                    IdKinoDvorane = table.Column(type: "INTEGER", nullable: false),
-                    VrijemePrikazivanja = table.Column(type: "TEXT", nullable: false)
+                    projekcijaID = table.Column(type: "INTEGER", nullable: false),
+                    //.Annotation("Sqlite:Autoincrement", true)
                     },
                 constraints: table =>
                 {
@@ -106,7 +113,7 @@ namespace ProjekatKinoMigrations
                 columns: table => new
                     {
                     uposlenikID = table.Column(type: "INTEGER", nullable: false),
-                    //  .Annotation("Sqlite:Autoincrement", true),
+                    //.Annotation("Sqlite:Autoincrement", true),
                     adresa = table.Column(type: "TEXT", nullable: true),
                     datumRodjenja = table.Column(type: "TEXT", nullable: false),
                     email = table.Column(type: "TEXT", nullable: true),
@@ -120,26 +127,6 @@ namespace ProjekatKinoMigrations
                 {
                     table.PrimaryKey("PK_Uposlenik", x => x.uposlenikID);
                 });
-            migration.CreateTable(
-                name: "Proizvod",
-                columns: table => new
-                    {
-                    proizvodID = table.Column(type: "INTEGER", nullable: false),
-                    // .Annotation("Sqlite:Autoincrement", true),
-                    Cijena = table.Column(type: "REAL", nullable: false),
-                    Naziv = table.Column(type: "TEXT", nullable: true),
-                    PosebnePonudeposebnaPonudaID = table.Column(type: "INTEGER", nullable: true),
-                    Vrsta = table.Column(type: "TEXT", nullable: true)
-                    },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Proizvod", x => x.proizvodID);
-                    table.ForeignKey(
-                        name: "FK_Proizvod_PosebnePonude_PosebnePonudeposebnaPonudaID",
-                        columns: x => x.PosebnePonudeposebnaPonudaID,
-                        referencedTable: "PosebnePonude",
-                        referencedColumn: "posebnaPonudaID");
-                });
             }
 
         public override void Down (MigrationBuilder migration)
@@ -148,10 +135,10 @@ namespace ProjekatKinoMigrations
             migration.DropTable("Karta");
             migration.DropTable("KinoDvorana");
             migration.DropTable("Korisnik");
+            migration.DropTable("PosebnePonude");
             migration.DropTable("Proizvod");
             migration.DropTable("Projekcija");
             migration.DropTable("Uposlenik");
-            migration.DropTable("PosebnePonude");
             }
         }
     }

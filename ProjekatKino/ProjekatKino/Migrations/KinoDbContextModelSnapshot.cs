@@ -49,10 +49,6 @@ namespace ProjekatKinoMigrations
                     b.Property<int>("kinoDvoranaID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Adresa");
-
-                    b.Property<int>("BrojMjesta");
-
                     b.Key("kinoDvoranaID");
                 });
 
@@ -63,7 +59,7 @@ namespace ProjekatKinoMigrations
 
                     b.Property<string>("adresa");
 
-                    b.Property<int>("brojKreditneKartice");
+                    b.Property<long>("brojKreditneKartice");
 
                     b.Property<DateTime>("datumRodjenja");
 
@@ -84,6 +80,8 @@ namespace ProjekatKinoMigrations
 
                     b.Property<string>("username");
 
+                    b.Property<string>("vrstaKreditneKartice");
+
                     b.Key("korisnikID");
                 });
 
@@ -91,12 +89,6 @@ namespace ProjekatKinoMigrations
                 {
                     b.Property<int>("posebnaPonudaID")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<double>("Cijena");
-
-                    b.Property<string>("Naziv");
-
-                    b.Property<string>("Velicina");
 
                     b.Key("posebnaPonudaID");
                 });
@@ -106,13 +98,11 @@ namespace ProjekatKinoMigrations
                     b.Property<int>("proizvodID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<double>("Cijena");
+                    b.Property<double>("cijena");
 
-                    b.Property<string>("Naziv");
+                    b.Property<string>("naziv");
 
-                    b.Property<int?>("PosebnePonudeposebnaPonudaID");
-
-                    b.Property<string>("Vrsta");
+                    b.Property<string>("vrsta");
 
                     b.Key("proizvodID");
                 });
@@ -121,12 +111,6 @@ namespace ProjekatKinoMigrations
                 {
                     b.Property<int>("projekcijaID")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<int>("IdFilma");
-
-                    b.Property<int>("IdKinoDvorane");
-
-                    b.Property<DateTime>("VrijemePrikazivanja");
 
                     b.Key("projekcijaID");
                 });
@@ -145,7 +129,7 @@ namespace ProjekatKinoMigrations
                     b.Property<string>("ime")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("maticniBroj");
+                    b.Property<long>("maticniBroj");
 
                     b.Property<string>("password");
 
@@ -154,13 +138,6 @@ namespace ProjekatKinoMigrations
                     b.Property<string>("username");
 
                     b.Key("uposlenikID");
-                });
-
-            builder.Entity("ProjekatKino.Models.Proizvod", b =>
-                {
-                    b.Reference("ProjekatKino.Models.PosebnePonude")
-                        .InverseCollection()
-                        .ForeignKey("PosebnePonudeposebnaPonudaID");
                 });
         }
     }

@@ -101,14 +101,14 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20170520125118_InitialMigration.cs" />
-    <Compile Include="Migrations\20170520125118_InitialMigration.designer.cs">
-      <DependentUpon>20170520125118_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\20170525234916_InitialMigration.cs" />
+    <Compile Include="Migrations\20170525234916_InitialMigration.designer.cs">
+      <DependentUpon>20170525234916_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\KinoDbContextModelSnapshot.cs" />
     <Compile Include="Models\DefaultPodaci.cs" />
     <Compile Include="Models\Film.cs" />
-    <Compile Include="Models\IKupovina.cs" />
+    <Compile Include="ViewModels\IKupovina.cs" />
     <Compile Include="Models\Karta.cs" />
     <Compile Include="Models\KinoDbContext.cs" />
     <Compile Include="Models\KinoDvorana.cs" />

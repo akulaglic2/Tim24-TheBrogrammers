@@ -31,14 +31,15 @@ namespace ProjekatKino.Models
                 //za tačnu putanju gdje se nalazi baza uraditi ovdje debug i procitati Path
                 databaseFilePath = Path.Combine(ApplicationData.Current.LocalFolder.Path,
                 databaseFilePath);
-                int x = 2;
                 }
             catch (InvalidOperationException) { }
             //Sqlite baza
             optionsBuilder.UseSqlite($"Data source={databaseFilePath}");
             }
         protected override void OnModelCreating (ModelBuilder modelBuilder)
-            { }
+            {
+
+            }
 
 
         }

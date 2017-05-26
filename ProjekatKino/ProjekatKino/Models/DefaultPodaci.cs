@@ -58,7 +58,7 @@ namespace ProjekatKino.Models
                 context.projekcije.AddRange(
                 new Projekcija()
                 {
-                    vrijemePrikazivanja = new DateTime(22, 05, 2017),
+                    vrijemePrikazivanja = new DateTime(2017, 05, 22),
                     idKinoDvorane = 1,
                 }
                 );
@@ -86,7 +86,7 @@ namespace ProjekatKino.Models
                     email = "neki tako",
                     username="zfazlagic1",
                     password="neki",
-                    datumRodjenja=new DateTime(22,04,1996),
+                    datumRodjenja=new DateTime(1996,04,22),
                     maticniBroj=2204996,
                  }
                 );
@@ -105,9 +105,9 @@ namespace ProjekatKino.Models
                     email = "neki tako",
                     username = "dcosic1",
                     password = "bla",
-                    datumRodjenja = new DateTime(08, 12, 1995),
+                    datumRodjenja = new DateTime(1995, 12, 8),
                     brojKreditneKartice=12345678,
-                    expDate=new DateTime(13,09,2020),
+                    expDate=new DateTime(2020,10,10),
                     imeVlasnikaKartice="Dino",
                     prezimeVlasnikaKartice="Cosic",
                 }

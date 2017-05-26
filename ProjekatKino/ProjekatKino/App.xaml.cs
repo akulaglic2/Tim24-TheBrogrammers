@@ -36,11 +36,11 @@ namespace ProjekatKino
             this.InitializeComponent();
             this.Suspending += OnSuspending;
 
-            //using (var db = new Models.KinoDbContext())
-            //    {
-            //    db.Database.ApplyMigrations();
-            //    Models.DefaultPodaci.Initialize(db);
-            //    }
+            using (var db = new Models.KinoDbContext())
+                {
+                db.Database.ApplyMigrations();
+                Models.DefaultPodaci.Initialize(db);
+                }
             }
 
 
