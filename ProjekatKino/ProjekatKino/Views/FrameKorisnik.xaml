@@ -7,12 +7,12 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Tapped="Grid_Tapped">
+    <Grid >
         <Grid.Background>
             <ImageBrush ImageSource="ms-appx:///Assets/pozadina.jpg" Stretch="Fill"/>
         </Grid.Background>
 
-        <Rectangle Name="opcijaKupiKartu" HorizontalAlignment="Left" Height="100" Margin="424,239,0,0" Stroke="White" VerticalAlignment="Top" Width="340" >
+        <Rectangle Name="opcijaKupiKartu" HorizontalAlignment="Left" Height="100" Margin="424,239,0,0" Stroke="White" VerticalAlignment="Top" Width="340" Tapped="opcijaKupiKartu_Tapped" >
            
             <Rectangle.Fill>
                 <ImageBrush Stretch="Uniform" ImageSource="ms-appx:///Assets/ikonaKarte.png"/>

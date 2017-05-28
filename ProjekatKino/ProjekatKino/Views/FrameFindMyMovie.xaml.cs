@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Maps;
@@ -30,6 +31,19 @@ namespace ProjekatKino.Views
             mapa.Style = MapStyle.Road;
             mapa.ZoomLevel = 15;
             this.DataContext = new GpsViewModel(mapa);
+
+            var currentView = SystemNavigationManager.GetForCurrentView();
+            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
+            }
+
+        private void ThisPage_BackRequested (object sender, BackRequestedEventArgs e)
+            {
+            if (Frame.CanGoBack)
+                {
+                Frame.Navigate(typeof(MainPage));
+                e.Handled = true;
+                }
             }
         }
     }

@@ -9,8 +9,9 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush Stretch="Fill" ImageSource="Assets/kino1.png"/>
+            <ImageBrush ImageSource="ms-appx:///Assets/pozadina.jpg" Stretch="Fill"/>
         </Grid.Background>
+
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="47,177,0,0" TextWrapping="Wrap" Text="Prodaja hrane i pića
                    " VerticalAlignment="Top" FontFamily="Cambria" FontSize="35" RenderTransformOrigin="0.38,0.317"/>
         <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="47,389,0,0" TextWrapping="Wrap" Text="Naziv proizvoda" VerticalAlignment="Top" RenderTransformOrigin="-0.935,0.3" FontFamily="Cambria" FontSize="24"/>

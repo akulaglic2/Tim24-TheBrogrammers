@@ -6,12 +6,14 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
+using ProjekatKino.Helper;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Core;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -25,12 +27,21 @@ namespace ProjekatKino.Views
         public FrameKorisnik ()
             {
             this.InitializeComponent();
+            var currentView = SystemNavigationManager.GetForCurrentView();
+            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
             }
 
-        private void Grid_Tapped (object sender, TappedRoutedEventArgs e)
+        private void ThisPage_BackRequested (object sender, BackRequestedEventArgs e)
             {
-            this.Frame.Navigate(typeof(FrameKupiKartu));
+            if (Frame.CanGoBack)
+                {
+                Frame.Navigate(typeof(MainPage));
+                e.Handled = true;
+                }
             }
+
+
 
         private void opcijaHome_Tapped (object sender, TappedRoutedEventArgs e)
             {
@@ -45,6 +56,11 @@ namespace ProjekatKino.Views
         private void Rectangle_Tapped_1 (object sender, TappedRoutedEventArgs e)
             {
             this.Frame.Navigate(typeof(FrameFindMyMovie));
+            }
+
+        private void opcijaKupiKartu_Tapped (object sender, TappedRoutedEventArgs e)
+            {
+            this.Frame.Navigate(typeof(FrameKupiKartu));
             }
         }
     }
