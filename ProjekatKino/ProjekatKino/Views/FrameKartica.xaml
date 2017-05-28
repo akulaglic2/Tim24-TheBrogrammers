@@ -7,18 +7,29 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+
     <Grid>
         <Grid.Background>
-            <ImageBrush Stretch="Fill" ImageSource="Assets/pozadina.jpg"/>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/pozadina.jpg"/>
         </Grid.Background>
-        <TextBlock x:Name="textBlock" Foreground="White" FontFamily="Cambria" HorizontalAlignment="Left" Margin="10,148,0,0" TextWrapping="Wrap" Text="Unesite podatke za naplatu" VerticalAlignment="Top"/>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="211" Margin="139,201,0,0"/>
-        <TextBlock x:Name="textBlock_Copy" Foreground="White" FontFamily="Cambria" HorizontalAlignment="Left" Margin="10,208,0,0" TextWrapping="Wrap" Text="Vrsta kartice" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="10,259,0,0" TextWrapping="Wrap" Text="Broj kreditne kartice" VerticalAlignment="Top" Width="289"/>
-        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Margin="10,296,0,0" TextWrapping="Wrap" Text="Exp. date" VerticalAlignment="Top" Width="289"/>
-        <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Margin="10,333,0,0" TextWrapping="Wrap" Text="Ime vlasnika kartice" VerticalAlignment="Top" Width="289"/>
-        <TextBox x:Name="textBox_Copy2" HorizontalAlignment="Left" Margin="10,370,0,0" TextWrapping="Wrap" Text="Prezime vlasnika kartice" VerticalAlignment="Top" Width="289"/>
-        <Button x:Name="button" Content="Potvrdi" HorizontalAlignment="Left" Margin="200,491,0,0" VerticalAlignment="Top" Width="99"/>
+
+
+        <TextBlock x:Name="textBlock" Foreground="White" FontFamily="Cambria" HorizontalAlignment="Left" Margin="239,188,0,0" TextWrapping="Wrap" Text="Unesite podatke za naplatu" VerticalAlignment="Top"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="289" Margin="520,255,0,0"/>
+        <TextBlock x:Name="textBlock_Copy" Foreground="White" FontFamily="Cambria" HorizontalAlignment="Left" Margin="354,262,0,0" TextWrapping="Wrap" Text="Vrsta kartice" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBoxBrojKreditneKartice" HorizontalAlignment="Left" Margin="520,309,0,0" TextWrapping="Wrap" Text="{Binding BrojKreditneKartice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="289"/>
+        <TextBox x:Name="textBoxImeVlasnikaKartice" HorizontalAlignment="Left" Margin="520,413,0,0" TextWrapping="Wrap" Text="{Binding ImeVlasnikaKartice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="289"/>
+        <TextBox x:Name="textBoxPrezimeVlasnikaKartice" HorizontalAlignment="Left" Margin="520,465,0,0" TextWrapping="Wrap" Text="{Binding PrezimeVlasnikaKartice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="289"/>
+        <Button x:Name="button" Content="Potvrdi" HorizontalAlignment="Left" Margin="435,525,0,0" VerticalAlignment="Top" Width="236" Command="{Binding Potvrdi}"/>
+        <TextBlock x:Name="textBlock_Copy1" Foreground="White" FontFamily="Cambria" HorizontalAlignment="Left" Margin="354,326,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="15">
+            <Run Text="Broj kreditne kartice"/>
+            <LineBreak/>
+            <Run/>
+        </TextBlock>
+        <TextBlock x:Name="textBlock_Copy2" Foreground="White" FontFamily="Cambria" HorizontalAlignment="Left" Margin="354,376,0,0" TextWrapping="Wrap" Text="Datum isteka kartice" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock_Copy3" Foreground="White" FontFamily="Cambria" HorizontalAlignment="Left" Margin="354,427,0,0" TextWrapping="Wrap" Text="Ime vlasnika kartice" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock_Copy4" Foreground="White" FontFamily="Cambria" HorizontalAlignment="Left" Margin="354,479,0,0" TextWrapping="Wrap" Text="Prezime vlasnika kartice" VerticalAlignment="Top"/>
+        <DatePicker HorizontalAlignment="Left" Margin="520,362,0,0" VerticalAlignment="Top" Date="{Binding ExpDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
     </Grid>
 </Page>

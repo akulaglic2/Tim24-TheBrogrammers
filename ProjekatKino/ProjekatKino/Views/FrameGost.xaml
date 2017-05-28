@@ -9,32 +9,36 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="Assets/pozadina.jpg"/>
+            <ImageBrush Stretch="Uniform" ImageSource="ms-appx:///Assets/pozadina.jpg"/>
         </Grid.Background>
-        <Rectangle HorizontalAlignment="Left" Height="100" Stroke="Black" VerticalAlignment="Top" Width="340" Margin="10,182,0,0">
+
+        <Rectangle HorizontalAlignment="Left" Height="120" Stroke="Black" VerticalAlignment="Top" Width="457" Margin="331,186,0,0" Tapped="Rectangle_Tapped">
             <Rectangle.Fill>
-                <ImageBrush Stretch="Uniform" ImageSource="Assets/add.png"/>
+                <ImageBrush Stretch="Uniform" ImageSource="ms-appx:///Assets/add.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,262,0,0" TextWrapping="Wrap" Text="Registruj se" VerticalAlignment="Top"/>
-        <Rectangle HorizontalAlignment="Left" Height="125" Stroke="Black" VerticalAlignment="Top" Width="340" Margin="10,287,0,0">
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="331,286,0,0" TextWrapping="Wrap" Text="Registruj se" VerticalAlignment="Top"/>
+        <Rectangle HorizontalAlignment="Left" Height="125" Stroke="Black" VerticalAlignment="Top" Width="457" Margin="331,311,0,0" Tapped="Rectangle_Tapped_1">
             <Rectangle.Fill>
-                <ImageBrush Stretch="Uniform" ImageSource="Assets/ikonaPosebnaPonuda.png"/>
+                <ImageBrush Stretch="Uniform" ImageSource="ms-appx:///Assets/ikonaPosebnaPonuda.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="10,392,0,0" TextWrapping="Wrap" Text="Posebna ponuda" VerticalAlignment="Top"/>
-        <Rectangle HorizontalAlignment="Left" Height="125" Stroke="Black" VerticalAlignment="Top" Width="162" Margin="10,417,0,0">
+        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="331,416,0,0" TextWrapping="Wrap" Text="Posebna ponuda" VerticalAlignment="Top"/>
+        <Rectangle HorizontalAlignment="Left" Height="133" Stroke="Black" VerticalAlignment="Top" Width="215" Margin="331,453,0,0" Tapped="Rectangle_Tapped_2">
             <Rectangle.Fill>
-                <ImageBrush Stretch="Uniform" ImageSource="Assets/ikonaHomePage.png"/>
+                <ImageBrush Stretch="Uniform" ImageSource="ms-appx:///Assets/ikonaHomePage.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="125" Stroke="Black" VerticalAlignment="Top" Width="162" Margin="172,417,0,0">
+        <Rectangle HorizontalAlignment="Left" Height="132.467" Stroke="Black" VerticalAlignment="Top" Width="229.143" Margin="560.857,452.708,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Tapped="Rectangle_Tapped_3">
+            <Rectangle.RenderTransform>
+                <CompositeTransform SkewY="-0.499" TranslateY="-0.706"/>
+            </Rectangle.RenderTransform>
             <Rectangle.Fill>
-                <ImageBrush Stretch="Uniform" ImageSource="Assets/ikonaFindMyMovie.png"/>
+                <ImageBrush Stretch="Uniform" ImageSource="ms-appx:///Assets/ikonaFindMyMovie.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" Margin="10,522,0,0" TextWrapping="Wrap" Text="Naslovna" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Left" Margin="177,522,0,0" TextWrapping="Wrap" Text="Find My Movie" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" Margin="331,566,0,0" TextWrapping="Wrap" Text="Naslovna" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Left" Margin="567,566,0,0" TextWrapping="Wrap" Text="Find My Movie" VerticalAlignment="Top"/>
         <Button x:Name="button" Content="" HorizontalAlignment="Left" Margin="10,53,0,0" VerticalAlignment="Top" Height="52" Width="44" RenderTransformOrigin="-0.316,0.481">
             <Button.Background>
                 <ImageBrush Stretch="Uniform" ImageSource="Assets/backIcon.png"/>

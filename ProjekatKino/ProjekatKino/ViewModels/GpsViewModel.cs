@@ -73,24 +73,24 @@ namespace ProjekatKino.ViewModels
             //Nadje li adresu ispisi je
             if (result.Status == MapLocationFinderStatus.Success)
                 {
-                Adresa = "Adresa je " + result.Locations[0].Address.Street;
+                Adresa = "Vaša lokacija je " + result.Locations[0].Address.Street;
                 }
             //nacrtati pravougaonik na mapi za oblast gdje bi korisnik mogao biti
             double centerLatitude = Mapa.Center.Position.Latitude;
             double centerLongitude = Mapa.Center.Position.Longitude;
             MapPolyline mapPolyline = new MapPolyline();
             mapPolyline.Path = new Geopath(new List<BasicGeoposition>() {
- new BasicGeoposition() {Latitude=centerLatitude-0.0005,
-Longitude=centerLongitude-0.001 },
- new BasicGeoposition() {Latitude=centerLatitude+0.0005,
-Longitude=centerLongitude-0.001 },
- new BasicGeoposition() {Latitude=centerLatitude+0.0005,
-Longitude=centerLongitude+0.001 },
- new BasicGeoposition() {Latitude=centerLatitude-0.0005,
-Longitude=centerLongitude+0.001 },
- new BasicGeoposition() {Latitude=centerLatitude-0.0005,
-Longitude=centerLongitude-0.001 }
- });
+                               new BasicGeoposition() {Latitude=centerLatitude-0.0005,
+                                                       Longitude=centerLongitude-0.001 },
+                               new BasicGeoposition() {Latitude=centerLatitude+0.0005,
+                                                       Longitude=centerLongitude-0.001 },
+                               new BasicGeoposition() {Latitude=centerLatitude+0.0005,
+                                                       Longitude=centerLongitude+0.001 },
+                               new BasicGeoposition() {Latitude=centerLatitude-0.0005,
+                                                       Longitude=centerLongitude+0.001 },
+                               new BasicGeoposition() {Latitude=centerLatitude-0.0005,
+                                                       Longitude=centerLongitude-0.001 }
+            });
             mapPolyline.StrokeColor = Colors.Black;
             mapPolyline.StrokeThickness = 3;
             mapPolyline.StrokeDashed = true;
@@ -101,7 +101,8 @@ Longitude=centerLongitude-0.001 }
             {
             //? je skracena verzija ako nije null
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(memberName));
-            }
+            }
+
 
 
 

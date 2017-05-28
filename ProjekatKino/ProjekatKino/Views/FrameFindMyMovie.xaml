@@ -10,30 +10,37 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush Stretch="Fill" ImageSource="Assets/pozadina.jpg"/>
+            <ImageBrush ImageSource="ms-appx:///Assets/pozadina.jpg" Stretch="Uniform"/>
         </Grid.Background>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+
         <Button x:Name="button" Content="" HorizontalAlignment="Left" Margin="15,55,0,0" VerticalAlignment="Top" Height="52" Width="44">
             <Button.Background>
                 <ImageBrush Stretch="Uniform" ImageSource="Assets/backIcon.png"/>
             </Button.Background>
         </Button>
-        <TextBlock x:Name="textBlock" Foreground="White" FontFamily="Cambria" FontSize="20" HorizontalAlignment="Left" Margin="15,186,0,0" TextWrapping="Wrap" Text="Naziv filma" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock_Copy" Foreground="White" FontFamily="Cambria" FontSize="20" HorizontalAlignment="Left" Margin="15,253,0,0" TextWrapping="Wrap" Text="Termin prikazivanja" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock_Copy1" Foreground="White" FontFamily="Cambria" FontSize="20" HorizontalAlignment="Left" Margin="15,316,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Broj karata">
-        </TextBlock>
-        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="15,214,0,0" VerticalAlignment="Top" Width="307"/>
-        <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Margin="15,276,0,0" VerticalAlignment="Top" Width="171"/>
-        <ComboBox x:Name="comboBox3" HorizontalAlignment="Left" Margin="15,344,0,0" VerticalAlignment="Top" Width="171"/>
-        <maps:MapControl x:Name="mapa" Grid.Row="2" Center="{Binding TrenutnaLokacija, Mode=OneWay}" Height="254" VerticalAlignment="Bottom" />        <TextBlock Text="{Binding Lokacija}" />
-        <TextBlock Text="{Binding Adresa}" Grid.Row="1"/>
+        <TextBlock x:Name="textBlock" Foreground="White" FontFamily="Cambria" FontSize="20" HorizontalAlignment="Left" Margin="152,233,0,0" TextWrapping="Wrap" Text="Naziv filma" VerticalAlignment="Top" Height="23" Width="96"/>
+        <TextBlock x:Name="textBlock_Copy" Foreground="White" FontFamily="Cambria" FontSize="20" HorizontalAlignment="Left" Margin="152,290,0,0" TextWrapping="Wrap" Text="Termin prikazivanja" VerticalAlignment="Top" Height="23" Width="171"/>
+        <TextBlock x:Name="textBlock_Copy1" Foreground="White" FontFamily="Cambria" FontSize="20" HorizontalAlignment="Left" Margin="152,343,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Broj karata" Height="23" Width="95"/>
+        <ComboBox x:Name="comboBoxNazivFilma" HorizontalAlignment="Left" Margin="401,235,0,0" VerticalAlignment="Top" Width="307" Height="32" SelectedItem="{Binding Naziv, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <ComboBoxItem Content="Logan"/>
+            <ComboBoxItem Content="Avengers: Age Of Ultron"/>
+            <ComboBoxItem Content="Circle"/>
+        </ComboBox>
+        <ComboBox x:Name="comboBoxTerminPrikazivanja" HorizontalAlignment="Left" Margin="401,288,0,0" VerticalAlignment="Top" Width="220" Height="32" SelectedItem="{Binding TerminPrikazivanja, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <ComboBoxItem Content="17:35"/>
+            <ComboBoxItem Content="20:00"/>
+            <ComboBoxItem Content="22:30"/>
+        </ComboBox>
+
+        <ComboBox x:Name="comboBoxBrojKarata" HorizontalAlignment="Left" Margin="401,341,0,0" VerticalAlignment="Top" Width="220" Height="32" SelectedItem="{Binding BrojKarata, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+            <ComboBoxItem Content="4"/>
+            <ComboBoxItem Content="5"/>
+        </ComboBox>
+        <maps:MapControl x:Name="mapa" Center="{Binding TrenutnaLokacija, Mode=OneWay}" Height="300" VerticalAlignment="Bottom" />
+        <TextBlock Text="{Binding Adresa}" Grid.Row="0" Margin="711,288,88,349" Foreground="White" FontFamily="Cambria"/>
 
     </Grid>
 </Page>

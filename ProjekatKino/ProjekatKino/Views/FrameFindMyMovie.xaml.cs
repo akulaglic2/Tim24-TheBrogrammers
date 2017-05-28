@@ -27,8 +27,8 @@ namespace ProjekatKino.Views
         public FrameFindMyMovie ()
             {
             this.InitializeComponent();
-            mapa.Style = MapStyle.Aerial3DWithRoads;
-            mapa.ZoomLevel = 20;
+            mapa.Style = MapStyle.Road;
+            mapa.ZoomLevel = 15;
             this.DataContext = new GpsViewModel(mapa);
             }
         }

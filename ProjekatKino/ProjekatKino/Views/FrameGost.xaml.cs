@@ -26,5 +26,25 @@ namespace ProjekatKino.Views
             {
             this.InitializeComponent();
             }
+
+        private void Rectangle_Tapped (object sender, TappedRoutedEventArgs e)
+            {
+            this.Frame.Navigate(typeof(FrameRegistracija));
+            }
+
+        private void Rectangle_Tapped_1 (object sender, TappedRoutedEventArgs e)
+            {
+            this.Frame.Navigate(typeof(FramePosebnaPonuda));
+            }
+
+        private void Rectangle_Tapped_2 (object sender, TappedRoutedEventArgs e)
+            {
+            this.Frame.Navigate(typeof(FrameNaslovna));
+            }
+
+        private void Rectangle_Tapped_3 (object sender, TappedRoutedEventArgs e)
+            {
+            this.Frame.Navigate(typeof(FrameFindMyMovie));
+            }
         }
     }
