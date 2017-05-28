@@ -108,6 +108,10 @@
     <Compile Include="Migrations\KinoDbContextModelSnapshot.cs" />
     <Compile Include="Models\DefaultPodaci.cs" />
     <Compile Include="Models\Film.cs" />
+    <Compile Include="UserControls\MyUserControl1.xaml.cs">
+      <DependentUpon>MyUserControl1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\GpsViewModel.cs" />
     <Compile Include="ViewModels\IKupovina.cs" />
     <Compile Include="Models\Karta.cs" />
     <Compile Include="Models\KinoDbContext.cs" />
@@ -226,6 +230,10 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\MyUserControl1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AdimPocetna.xaml">
       <Generator>MSBuild:Compile</Generator>
