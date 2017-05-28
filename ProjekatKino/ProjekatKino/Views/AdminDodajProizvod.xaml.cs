@@ -34,6 +34,7 @@ namespace App3
 
         private void ThisPage_BackRequested (object sender, BackRequestedEventArgs e)
             {
+            //provjeriti
             if (Frame.CanGoBack)
                 {
                 Frame.Navigate(typeof(AdimPocetna));
