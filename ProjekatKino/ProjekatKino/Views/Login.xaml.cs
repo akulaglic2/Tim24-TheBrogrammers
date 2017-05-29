@@ -20,22 +20,11 @@ namespace ProjekatKino.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class AdminObrisiUposlenog : Page
+    public sealed partial class Login : Page
     {
-        public AdminObrisiUposlenog()
+        public Login()
         {
             this.InitializeComponent();
-            var currentView = SystemNavigationManager.GetForCurrentView();
-            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
-            SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
-        }
-        private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
-        {
-            if (Frame.CanGoBack)
-            {
-                Frame.Navigate(typeof(AdimPocetna));
-                e.Handled = true;
-            }
         }
     }
 }

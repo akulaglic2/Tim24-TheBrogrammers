@@ -134,12 +134,24 @@
     <Compile Include="ViewModels\ObrisiUposlenogVIewModel.cs" />
     <Compile Include="ViewModels\ProdajaHraneViewModel.cs" />
     <Compile Include="ViewModels\UposlenikRegistracijaViewModel.cs" />
-    <Compile Include="Views\AdimPocetna.xaml.cs" />
-    <Compile Include="Views\AdminDodajFilm.xaml.cs" />
-    <Compile Include="Views\AdminDodajProizvod.xaml.cs" />
-    <Compile Include="Views\AdminDodajUposlenog.xaml.cs" />
-    <Compile Include="Views\AdminObrisiUposlenog.xaml.cs" />
-    <Compile Include="Views\AdminTehnicki.xaml.cs" />
+    <Compile Include="Views\AdimPocetna.xaml.cs">
+      <DependentUpon>AdimPocetna.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminDodajFilm.xaml.cs">
+      <DependentUpon>AdminDodajFilm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminDodajProizvod.xaml.cs">
+      <DependentUpon>AdminDodajProizvod.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminDodajUposlenog.xaml.cs">
+      <DependentUpon>AdminDodajUposlenog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminObrisiUposlenog.xaml.cs">
+      <DependentUpon>AdminObrisiUposlenog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminTehnicki.xaml.cs">
+      <DependentUpon>AdminTehnicki.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\FrameFindMyMovie.xaml.cs">
       <DependentUpon>FrameFindMyMovie.xaml</DependentUpon>
     </Compile>
@@ -161,17 +173,30 @@
     <Compile Include="Views\FramePosebnaPonuda.xaml.cs">
       <DependentUpon>FramePosebnaPonuda.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\FrameProdajaHrane.xaml.cs" />
-    <Compile Include="Views\FrameProdajaKarata.xaml.cs" />
-    <Compile Include="Views\FrameProdajaPosebnih.xaml.cs" />
+    <Compile Include="Views\FrameProdajaHrane.xaml.cs">
+      <DependentUpon>FrameProdajaHrane.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrameProdajaKarata.xaml.cs">
+      <DependentUpon>FrameProdajaKarata.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrameProdajaPosebnih.xaml.cs">
+      <DependentUpon>FrameProdajaPosebnih.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\FrameRacun.xaml.cs">
       <DependentUpon>FrameRacun.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\FrameRegistracija.xaml.cs">
       <DependentUpon>FrameRegistracija.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\RegistrujKorisnika.xaml.cs" />
-    <Compile Include="Views\UposlenikPocetna.xaml.cs" />
+    <Compile Include="Views\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegistrujKorisnika.xaml.cs">
+      <DependentUpon>RegistrujKorisnika.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UposlenikPocetna.xaml.cs">
+      <DependentUpon>UposlenikPocetna.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -238,28 +263,28 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AdimPocetna.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AdminDodajFilm.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AdminDodajProizvod.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AdminDodajUposlenog.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AdminObrisiUposlenog.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AdminTehnicki.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\FrameFindMyMovie.xaml">
       <SubType>Designer</SubType>
@@ -290,16 +315,16 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\FrameProdajaHrane.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\FrameProdajaKarata.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\FrameProdajaPosebnih.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\FrameRacun.xaml">
       <SubType>Designer</SubType>
@@ -309,13 +334,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\RegistrujKorisnika.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="Views\Login.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RegistrujKorisnika.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\UposlenikPocetna.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
