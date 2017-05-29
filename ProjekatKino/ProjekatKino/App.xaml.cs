@@ -18,6 +18,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using ProjekatKino.Views;
 using Windows.UI.Xaml.Navigation;
+using Microsoft.WindowsAzure.MobileServices;
 
 
 
@@ -36,6 +37,7 @@ namespace ProjekatKino
             {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+           
 
             using (var db = new Models.KinoDbContext())
                 {
@@ -43,7 +45,7 @@ namespace ProjekatKino
                 Models.DefaultPodaci.Initialize(db);
                 }
             }
-
+        public static MobileServiceClient MobileService = new MobileServiceClient("http://projekatkino.azurewebsites.net");
 
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
