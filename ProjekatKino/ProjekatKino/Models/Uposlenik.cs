@@ -16,11 +16,11 @@ namespace ProjekatKino.Models
         public Uposlenik (string ime, string prezime, string adresa, string email, string username, string password, DateTime datumRodjenja, Int64 maticniBroj)
                 : base(ime, prezime, adresa, email, username, password, datumRodjenja)
             {
-            
+
             this.maticniBroj = maticniBroj;
             }
 
-        public Uposlenik() { }
+        public Uposlenik () { }
 
         }
     }

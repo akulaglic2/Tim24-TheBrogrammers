@@ -222,11 +222,7 @@ namespace ProjekatKino.ViewModels
         public ICommand Dodaj { get; set; }
         public Korisnik Korisnik { get; set; }
 
-
-
-        IMobileServiceTable<Korisnik> userTableObj = App.MobileService.GetTable<Korisnik>();
-
-
+        IMobileServiceTable<Korisnik> userTableObj = App.MobileService.GetTable<Korisnik>();
 
         public KorisnikRegistracijaViewModel ()
             {
@@ -282,11 +278,10 @@ namespace ProjekatKino.ViewModels
                     kor.prezimeVlasnikaKartice = PrezimeVlasnikaKartice;
                     userTableObj.InsertAsync(kor);
 
-                    MessageDialog msgDialog = new MessageDialog("Uspješno ste registrovani.");
-
-
+                    MessageDialog msgDialog = new MessageDialog("Uspjesno je izvrsena registracija.");
                     msgDialog.ShowAsync();
                     }
+
                 catch (Exception ex)
                     {
                     MessageDialog msgDialogError = new MessageDialog("Error : " + ex.ToString());
@@ -307,18 +302,6 @@ namespace ProjekatKino.ViewModels
                 PrezimeVlasnikaKartice = string.Empty;
                 }
             }
-
-
-
-
-
-
-
-
-
-
-
-
 
         }
     }

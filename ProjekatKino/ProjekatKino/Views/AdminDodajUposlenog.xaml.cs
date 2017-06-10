@@ -17,28 +17,28 @@ using Windows.UI.Xaml.Navigation;
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace ProjekatKino.Views
-{
+    {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class AdminDodajUposlenog : Page
-    {
-        public AdminDodajUposlenog()
         {
+        public AdminDodajUposlenog ()
+            {
             this.InitializeComponent();
-
+            DataContext = new AdminDodajFilm();
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
-        }
+            }
 
-        private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
-        {
-            if (Frame.CanGoBack)
+        private void ThisPage_BackRequested (object sender, BackRequestedEventArgs e)
             {
+            if (Frame.CanGoBack)
+                {
                 Frame.Navigate(typeof(AdminPocetna));
                 e.Handled = true;
+                }
             }
         }
     }
-}

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using ProjekatKino.Models;
 using System.Text;
 using System.Windows.Input;
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace ProjekatKino.ViewModels
     {
@@ -154,8 +155,7 @@ namespace ProjekatKino.ViewModels
         public ICommand Dodaj { get; set; }
         public Uposlenik uposlenik { get; set; }
 
-
-
+        IMobileServiceTable<Uposlenik> userTableObj = App.MobileService.GetTable<Uposlenik>();
 
         public UposlenikRegistracijaViewModel ()
             {
@@ -183,12 +183,40 @@ namespace ProjekatKino.ViewModels
                     await messageDialog.ShowAsync();
                     }
 
-                var uneseniUposlenik = new Uposlenik(Ime, Prezime, Adresa, Email, Username, Password, Convert.ToDateTime(DatumRodjenja), MaticniBroj);
-                db.uposlenici.Add(uneseniUposlenik);
-                db.SaveChanges();
+                try
+                    {
 
-                var message = new MessageDialog("Uspješno je unesen novi radnik", "Unos radnika");
-                await message.ShowAsync();
+                    Uposlenik kor = new Uposlenik();
+                    kor.ime = Ime;
+                    kor.prezime = Prezime;
+                    kor.adresa = Adresa;
+                    kor.email = Email;
+                    kor.username = Username;
+                    kor.password = Password;
+                    kor.datumRodjenja = DatumRodjenja;
+                    kor.maticniBroj = MaticniBroj;
+                    userTableObj.InsertAsync(kor);
+
+                    MessageDialog msgDialog = new MessageDialog("Uspješno ste dodali uposlenika.");
+                    msgDialog.ShowAsync();
+                    }
+
+                catch (Exception ex)
+                    {
+                    MessageDialog msgDialogError = new MessageDialog("Error : " + ex.ToString());
+                    msgDialogError.ShowAsync();
+                    }
+
+
+
+
+                var uneseniUposlenik = new Uposlenik(Ime, Prezime, Adresa, Email, Username, Password, Convert.ToDateTime(DatumRodjenja), MaticniBroj);
+                // SQLite baza
+                //db.uposlenici.Add(uneseniUposlenik);
+                //db.SaveChanges();
+
+                //var message = new MessageDialog("Uspješno je unesen novi radnik", "Unos radnika");
+                //await message.ShowAsync();
 
                 Ime = string.Empty;
                 Prezime = string.Empty;
