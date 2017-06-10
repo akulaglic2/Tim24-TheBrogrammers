@@ -7,12 +7,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ProjekatKino.Models
-{
-    public class PosebnePonude
     {
+    public class PosebnePonude
+        {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
-        public int posebnaPonudaID { get; set; }
+        public int id { get; set; }
         public string naziv;
         public double cijena;
         public string velicina;
@@ -20,21 +20,20 @@ namespace ProjekatKino.Models
         public string sadrzaj2;
         public string kratakOpis;
 
-      public  PosebnePonude(string naziv,double cijena,string velicina, string sadrzaj1, string sadrzaj2, string kratakOpis)
-        {
-            
-            this.naziv= naziv;
+        public PosebnePonude (string naziv, double cijena, string velicina, string sadrzaj1, string sadrzaj2, string kratakOpis)
+            {
+
+            this.naziv = naziv;
             this.cijena = cijena;
             this.velicina = velicina;
             this.sadrzaj1 = sadrzaj1;
             this.sadrzaj2 = sadrzaj2;
             this.kratakOpis = kratakOpis;
 
+            }
+
+        public PosebnePonude () { }
+
 
         }
-
-        public PosebnePonude() { }
-
-        
     }
-}

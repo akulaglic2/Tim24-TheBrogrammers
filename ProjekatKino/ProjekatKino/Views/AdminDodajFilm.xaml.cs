@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjekatKino.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -26,6 +27,7 @@ namespace ProjekatKino.Views
         public AdminDodajFilm()
         {
             this.InitializeComponent();
+            DataContext = new DodajFilmViewModel();
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
@@ -39,5 +41,10 @@ namespace ProjekatKino.Views
                 e.Handled = true;
             }
         }
-    }
+
+        private void button_Tapped (object sender, TappedRoutedEventArgs e)
+            {
+
+            }
+        }
 }

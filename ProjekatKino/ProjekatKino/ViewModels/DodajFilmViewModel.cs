@@ -1,4 +1,5 @@
-﻿using ProjekatKino.Helper;
+﻿using Microsoft.WindowsAzure.MobileServices;
+using ProjekatKino.Helper;
 using ProjekatKino.Models;
 using System;
 using System.Collections.Generic;
@@ -113,6 +114,8 @@ namespace ProjekatKino.ViewModels
             Dodaj = new RelayCommand<object>(unosFilma);
             }
 
+        IMobileServiceTable<Film> userTableObj = App.MobileService.GetTable<Film>();
+
         private async void unosFilma (object obj)
             {
             using (var db = new KinoDbContext())
@@ -124,12 +127,37 @@ namespace ProjekatKino.ViewModels
                     await messageDialog.ShowAsync();
                     }
 
-                var unesiFilm = new Film(Naziv, Zanr, DuzinaTrajanja, Reziser, OpisFilma);
-                db.filmovi.Add(unesiFilm);
-                db.SaveChanges();
 
-                var message = new MessageDialog("Uspješno je unesen novi film", "Unos filma");
-                await message.ShowAsync();
+                try
+                    {
+
+                    Film kor = new Film();
+                    kor.naziv = Naziv;
+                    kor.zanr = Zanr;
+                    kor.duzinaTrajanja = DuzinaTrajanja;
+                    kor.reziser = Reziser;
+                    kor.opisFilma = OpisFilma;
+                    userTableObj.InsertAsync(kor);
+
+                    MessageDialog msgDialog = new MessageDialog("Uspješno ste dodali film.");
+                    msgDialog.ShowAsync();
+                    }
+
+                catch (Exception ex)
+                    {
+                    MessageDialog msgDialogError = new MessageDialog("Error : " + ex.ToString());
+                    msgDialogError.ShowAsync();
+                    }
+
+
+
+
+                var unesiFilm = new Film(Naziv, Zanr, DuzinaTrajanja, Reziser, OpisFilma);
+                //db.filmovi.Add(unesiFilm);
+                //db.SaveChanges();
+
+                //var message = new MessageDialog("Uspješno je unesen novi film", "Unos filma");
+                //await message.ShowAsync();
 
                 Naziv = string.Empty;
                 Zanr = string.Empty;

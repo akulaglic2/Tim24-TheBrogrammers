@@ -11,7 +11,7 @@ namespace ProjekatKino.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 
-        public int proizvodID { get; set; }
+        public int id { get; set; }
         public string naziv { get; set; }
         public double cijena { get; set; }
         public string vrsta { get; set; }

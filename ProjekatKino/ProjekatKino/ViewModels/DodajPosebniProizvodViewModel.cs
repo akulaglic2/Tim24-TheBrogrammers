@@ -1,4 +1,5 @@
-﻿using ProjekatKino.Helper;
+﻿using Microsoft.WindowsAzure.MobileServices;
+using ProjekatKino.Helper;
 using ProjekatKino.Models;
 using System;
 using System.Collections.Generic;
@@ -131,6 +132,8 @@ namespace ProjekatKino.ViewModels
             Dodaj = new RelayCommand<object>(unosProizvoda);
             }
 
+        IMobileServiceTable<PosebnePonude> userTableObj = App.MobileService.GetTable<PosebnePonude>();
+
         private async void unosProizvoda (object obj)
             {
             using (var db = new KinoDbContext())
@@ -147,12 +150,34 @@ namespace ProjekatKino.ViewModels
                     await messageDialog.ShowAsync();
                     }
 
-                var unesiProizvod = new PosebnePonude(Naziv, Cijena, Velicina, Sadrzaj1, Sadrzaj2, KratakOpis);
-                db.posebnePonude.Add(unesiProizvod);
-                db.SaveChanges();
+                try
+                    {
 
-                var message = new MessageDialog("Uspješno je unesena nova posebna ponuda", "Unos posebne ponude");
-                await message.ShowAsync();
+                    PosebnePonude kor = new PosebnePonude();
+                    kor.naziv = Naziv;
+                    kor.cijena = Cijena;
+                    kor.velicina = Velicina;
+                    kor.sadrzaj1 = Sadrzaj1;
+                    kor.sadrzaj2 = Sadrzaj2;
+                    kor.kratakOpis = KratakOpis;
+                    userTableObj.InsertAsync(kor);
+
+                    MessageDialog msgDialog = new MessageDialog("Uspješno ste dodali film.");
+                    msgDialog.ShowAsync();
+                    }
+
+                catch (Exception ex)
+                    {
+                    MessageDialog msgDialogError = new MessageDialog("Error : " + ex.ToString());
+                    msgDialogError.ShowAsync();
+                    }
+
+                var unesiProizvod = new PosebnePonude(Naziv, Cijena, Velicina, Sadrzaj1, Sadrzaj2, KratakOpis);
+                //db.posebnePonude.Add(unesiProizvod);
+                //db.SaveChanges();
+
+                //var message = new MessageDialog("Uspješno je unesena nova posebna ponuda", "Unos posebne ponude");
+                //await message.ShowAsync();
 
                 Naziv = string.Empty;
                 Cijena = 0;
