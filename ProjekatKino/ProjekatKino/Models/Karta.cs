@@ -18,13 +18,13 @@ namespace ProjekatKino.Models
 
         public Karta (int kartaID, double cijenaKarte, int idProjekcije)
             {
-            
+
             this.cijenaKarte = cijenaKarte;
             this.idProjekcije = idProjekcije;
 
             }
-        public Karta () { }
-
+        public Karta ()
+            { }
 
         }
     }

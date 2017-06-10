@@ -61,7 +61,7 @@ namespace ProjekatKino.ViewModels
                 {
                     foreach (Uposlenik u in db.uposlenici)
                     {
-                        if (u.uposlenikID == id) db.uposlenici.Remove(u);
+                        if (u.id == id) db.uposlenici.Remove(u);
                     }
                 }
                 var message = new MessageDialog("Uspješno ste obrisali uposlenog!", "Brisanje uspješno");

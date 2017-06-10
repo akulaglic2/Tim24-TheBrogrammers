@@ -20,15 +20,14 @@ namespace ProjekatKino.Models
 
         public Film (string naziv, string zanr, int duzinaTrajanja, string reziser, string opisFilma)
             {
-            
             this.naziv = naziv;
             this.zanr = zanr;
             this.duzinaTrajanja = duzinaTrajanja;
             this.reziser = reziser;
             this.opisFilma = opisFilma;
             }
-        public Film() { }
-
+        public Film ()
+            { }
         }
 
     }

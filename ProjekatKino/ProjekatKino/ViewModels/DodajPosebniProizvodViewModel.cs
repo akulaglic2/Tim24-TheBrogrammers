@@ -173,9 +173,9 @@ namespace ProjekatKino.ViewModels
                     }
 
                 var unesiProizvod = new PosebnePonude(Naziv, Cijena, Velicina, Sadrzaj1, Sadrzaj2, KratakOpis);
+                
                 //db.posebnePonude.Add(unesiProizvod);
                 //db.SaveChanges();
-
                 //var message = new MessageDialog("Uspješno je unesena nova posebna ponuda", "Unos posebne ponude");
                 //await message.ShowAsync();
 

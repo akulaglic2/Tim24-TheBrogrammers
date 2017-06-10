@@ -11,19 +11,18 @@ namespace ProjekatKino.Models
         {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 
-        public int kinoDvoranaID { get; set; }
-        public string adresa;
-        public int brojMjesta;
+        public int id { get; set; }
+        public string adresa { get; set; }
+        public int brojMjesta { get; set; }
 
-        public KinoDvorana(int kinoDvoranaID, string adresa, int brojMjesta)
-        {
-            this.kinoDvoranaID = kinoDvoranaID;
+        public KinoDvorana (int kinoDvoranaID, string adresa, int brojMjesta)
+            {
             this.adresa = adresa;
             this.brojMjesta = brojMjesta;
+            }
+
+        public KinoDvorana () { }
+
         }
-
-        public KinoDvorana() { }
-
-    }
 
     }

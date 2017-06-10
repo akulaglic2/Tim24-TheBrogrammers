@@ -10,7 +10,7 @@ namespace ProjekatKino.Models
     public class Uposlenik : Osoba
         {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int uposlenikID { get; set; } // primary key
+        public int id { get; set; } // primary key
         public Int64 maticniBroj { get; set; }
 
         public Uposlenik (string ime, string prezime, string adresa, string email, string username, string password, DateTime datumRodjenja, Int64 maticniBroj)

@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ProjekatKino.Models
-{
-    public class Proizvod
     {
+    public class Proizvod
+        {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 
         public int id { get; set; }
@@ -16,16 +16,16 @@ namespace ProjekatKino.Models
         public double cijena { get; set; }
         public string vrsta { get; set; }
 
-        public Proizvod(string naziv, double cijena, string vrsta) {
-            
+        public Proizvod (string naziv, double cijena, string vrsta)
+            {
+
             this.naziv = naziv;
             this.cijena = cijena;
             this.vrsta = vrsta;
 
+            }
+        public Proizvod ()
+            { }
+
         }
-        public Proizvod() { }
-
-
-        
     }
-}
