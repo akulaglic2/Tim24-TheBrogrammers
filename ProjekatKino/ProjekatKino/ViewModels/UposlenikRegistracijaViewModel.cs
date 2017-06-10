@@ -7,7 +7,6 @@ using Windows.UI.Popups;
 using System.Threading.Tasks;
 using ProjekatKino.Models;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace ProjekatKino.ViewModels
@@ -168,7 +167,7 @@ namespace ProjekatKino.ViewModels
             using (var db = new KinoDbContext())
                 {
                 // validacija unosa
-                if (Ime == "" || Prezime == "" || Adresa == "" || Email == "" || Username == "" || Password == "" || DatumRodjenja == null || MaticniBroj == null)
+                if (Ime == "" || Prezime == "" || Adresa == "" || Email == "" || Username == "" || Password == "" || DatumRodjenja == null || MaticniBroj == 0)
                     {
                     var messageDialog = new MessageDialog("Morate popuniti sva polja!");
                     await messageDialog.ShowAsync();

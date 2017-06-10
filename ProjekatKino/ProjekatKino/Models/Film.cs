@@ -10,7 +10,7 @@ namespace ProjekatKino.Models
     public class Film
         {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int filmID { get; set; }
+        public int id { get; set; }
         public string naziv { get; set; }
         public string zanr { get; set; }
         public int duzinaTrajanja { get; set; } //u minutama

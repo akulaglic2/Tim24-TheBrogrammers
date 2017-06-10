@@ -30,7 +30,7 @@ namespace ProjekatKino
 
         private void button_Tapped (object sender, TappedRoutedEventArgs e)
             {
-            this.Frame.Navigate(typeof(FrameFindMyMovie));
+            this.Frame.Navigate(typeof(FrameRegistracija));
             }
         }
     }

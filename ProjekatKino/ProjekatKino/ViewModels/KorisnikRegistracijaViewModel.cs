@@ -7,8 +7,8 @@ using Windows.UI.Popups;
 using System.Threading.Tasks;
 using ProjekatKino.Models;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace ProjekatKino.ViewModels
     {
@@ -28,6 +28,7 @@ namespace ProjekatKino.ViewModels
         private string prezime;
         private string email;
         private string adresa;
+        private int telefon;
         private string username;
         private string password;
         private DateTime datumRodjenja;
@@ -203,10 +204,27 @@ namespace ProjekatKino.ViewModels
                 NotifyPropertyChanged("PrezimeVlasnikaKartice");
                 }
             }
+
+        public int Telefon
+            {
+            get
+                {
+                return telefon;
+                }
+
+            set
+                {
+                telefon = value;
+                }
+            }
         #endregion
 
         public ICommand Dodaj { get; set; }
         public Korisnik Korisnik { get; set; }
+
+
+
+        IMobileServiceTable<Korisnik> userTableObj = App.MobileService.GetTable<Korisnik>();
 
 
 
@@ -220,7 +238,7 @@ namespace ProjekatKino.ViewModels
             using (var db = new KinoDbContext())
                 {
                 // validacija unosa 
-                if (Ime == "" || Prezime == "" || Adresa == "" || Email == "" || Username == "" || Password == "" || DatumRodjenja == null || BrojKreditneKartice == null || ExpDate == null || ImeVlasnikaKartice == "" || PrezimeVlasnikaKartice == "")
+                if (Ime == "" || Prezime == "" || Adresa == "" || Email == "" || Username == "" || Password == "" || DatumRodjenja == null || BrojKreditneKartice == 0 || ExpDate == null || ImeVlasnikaKartice == "" || PrezimeVlasnikaKartice == "")
                     {
                     var messageDialog = new MessageDialog("Morate popuniti sva polja!");
                     await messageDialog.ShowAsync();
@@ -235,18 +253,48 @@ namespace ProjekatKino.ViewModels
                     var messageDialog = new MessageDialog("Password mora imati najmanje 8, a najvise 22 karaktera");
                     await messageDialog.ShowAsync();
                     }
-                if (DateTime.Compare(ExpDate, DateTime.Today) <= 0)
+                if (DateTime.Compare(ExpDate, DateTime.Today) < 0)
                     {
                     var messageDialog = new MessageDialog("Datum isteka kartice nije validan!");
                     await messageDialog.ShowAsync();
                     }
 
-                var uneseniKorisnik = new Korisnik(Ime, Prezime, Adresa, Email, Username, Password, Convert.ToDateTime(DatumRodjenja), BrojKreditneKartice, Convert.ToDateTime(ExpDate), ImeVlasnikaKartice, PrezimeVlasnikaKartice, VrstaKreditneKartice);
-                db.korisnici.Add(uneseniKorisnik);
-                db.SaveChanges();
+                var uneseniKorisnik = new Korisnik(Ime, Prezime, Adresa, Email, Username, Password, Convert.ToDateTime(DatumRodjenja), BrojKreditneKartice, Convert.ToDateTime(ExpDate), ImeVlasnikaKartice, PrezimeVlasnikaKartice, VrstaKreditneKartice, Telefon);
+                //db.korisnici.Add(uneseniKorisnik);
+                //db.SaveChanges();
 
-                var message = new MessageDialog("Uspješno je unesen novi radnik", "Unos radnika");
-                await message.ShowAsync();
+                try
+                    {
+
+                    Korisnik kor = new Korisnik();
+                    kor.ime = Ime;
+                    kor.prezime = Prezime;
+                    kor.adresa = Adresa;
+                    kor.email = Email;
+                    kor.telefon = Telefon;
+                    kor.username = Username;
+                    kor.password = Password;
+                    kor.datumRodjenja = DatumRodjenja;
+                    kor.brojKreditneKartice = BrojKreditneKartice;
+                    kor.expDate = ExpDate;
+                    kor.vrstaKreditneKartice = VrstaKreditneKartice;
+                    kor.imeVlasnikaKartice = ImeVlasnikaKartice;
+                    kor.prezimeVlasnikaKartice = PrezimeVlasnikaKartice;
+                    userTableObj.InsertAsync(kor);
+
+                    MessageDialog msgDialog = new MessageDialog("Uspješno ste registrovani.");
+
+
+                    msgDialog.ShowAsync();
+                    }
+                catch (Exception ex)
+                    {
+                    MessageDialog msgDialogError = new MessageDialog("Error : " + ex.ToString());
+                    msgDialogError.ShowAsync();
+                    }
+
+                //var message = new MessageDialog("Uspješno je unesen novi korisnik", "Unos kori");
+                //await message.ShowAsync();
 
                 Ime = string.Empty;
                 Prezime = string.Empty;

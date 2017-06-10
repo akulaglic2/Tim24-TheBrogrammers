@@ -102,7 +102,7 @@ namespace ProjekatKino.ViewModels
             using (var db = new KinoDbContext())
                 {
                 // validacija unosa
-                if (Naziv == "" || Cijena == null || Vrsta == "")
+                if (Naziv == "" || Cijena == 0 || Vrsta == "")
                     {
                     var messageDialog = new MessageDialog("Morate popuniti sva polja!");
                     await messageDialog.ShowAsync();

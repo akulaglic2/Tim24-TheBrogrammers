@@ -136,7 +136,7 @@ namespace ProjekatKino.ViewModels
             using (var db = new KinoDbContext())
                 {
                 // validacija unosa 
-                if (Naziv == "" || Cijena == null || Velicina == "" || Sadrzaj1 == "" || Sadrzaj2 == "" || KratakOpis == "")
+                if (Naziv == "" || Cijena == 0 || Velicina == "" || Sadrzaj1 == "" || Sadrzaj2 == "" || KratakOpis == "")
                     {
                     var messageDialog = new MessageDialog("Morate popuniti sva polja!");
                     await messageDialog.ShowAsync();

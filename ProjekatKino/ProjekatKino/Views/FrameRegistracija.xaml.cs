@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Core;
+using ProjekatKino.ViewModels;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -26,6 +27,7 @@ namespace ProjekatKino.Views
         public FrameRegistracija ()
             {
             this.InitializeComponent();
+            DataContext = new KorisnikRegistracijaViewModel();
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
@@ -42,7 +44,9 @@ namespace ProjekatKino.Views
 
         private void button_Tapped (object sender, TappedRoutedEventArgs e)
             {
-            this.Frame.Navigate(typeof(FrameKartica));
+            //this.Frame.Navigate(typeof(FrameKartica));
             }
+
+       
         }
     }
