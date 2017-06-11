@@ -15,6 +15,7 @@ namespace ProjekatKino.ViewModels
     public class GpsViewModel : INotifyPropertyChanged
         {
         private Geopoint trenutnaLokacija;
+        public Geopoint lokacijaKina { get; set; }
         public Geopoint TrenutnaLokacija
             {
             get { return trenutnaLokacija; }
@@ -55,7 +56,7 @@ namespace ProjekatKino.ViewModels
         public async void dajLokaciju ()
             {
             Geoposition pos = null;
-            //da li se smije uzeti lokacija, trazi se odobrenje od korisnika (takodjer treba i capability)
+            // da li se smije uzeti lokacija, trazi se odobrenje od korisnika (takodjer treba i capability)
             var accessStatus = await Geolocator.RequestAccessAsync();
             if (accessStatus == GeolocationAccessStatus.Allowed)
                 {
@@ -63,18 +64,20 @@ namespace ProjekatKino.ViewModels
                 Geolocator geolocator = new Geolocator { DesiredAccuracyInMeters = 10 };
                 pos = await geolocator.GetGeopositionAsync();
                 }
-            //tacka iz pozicije
+            // tacka iz pozicije
             TrenutnaLokacija = pos.Coordinate.Point;
             Lokacija = "Geolokacija Lat: " + TrenutnaLokacija.Position.Latitude + " Lng: " +
            TrenutnaLokacija.Position.Longitude;
-            //uzeti adresu na osnovu GeoTacke
+            // uzeti adresu na osnovu GeoTacke
             MapLocationFinderResult result = await
-           MapLocationFinder.FindLocationsAtAsync(pos.Coordinate.Point);
-            //Nadje li adresu ispisi je
+            MapLocationFinder.FindLocationsAtAsync(pos.Coordinate.Point);
+            
+            // Nadje li adresu ispisi je
             if (result.Status == MapLocationFinderStatus.Success)
                 {
                 Adresa = "Vaša lokacija je " + result.Locations[0].Address.Street;
                 }
+            
             //nacrtati pravougaonik na mapi za oblast gdje bi korisnik mogao biti
             double centerLatitude = Mapa.Center.Position.Latitude;
             double centerLongitude = Mapa.Center.Position.Longitude;

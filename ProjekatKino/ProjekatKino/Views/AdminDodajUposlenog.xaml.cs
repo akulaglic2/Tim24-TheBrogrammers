@@ -7,6 +7,7 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
+using ProjekatKino.ViewModels;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
@@ -26,7 +27,7 @@ namespace ProjekatKino.Views
         public AdminDodajUposlenog ()
             {
             this.InitializeComponent();
-            DataContext = new AdminDodajFilm();
+            DataContext = new UposlenikRegistracijaViewModel();
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
