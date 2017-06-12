@@ -27,28 +27,34 @@ namespace ProjekatKino.Views
             this.InitializeComponent();
         }
 
-        /*{
-            this.Frame.Navigate(typeof(AdminDodajUposlenog));
+        private void RelativePanel_PointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AdminDodajProjekciju));
         }
 
         private void RelativePanel_PointerPressed_1(object sender, PointerRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(AdminObrisiUposlenog));
+            this.Frame.Navigate(typeof(AdminDodajUposlenog));
         }
 
         private void RelativePanel_PointerPressed_2(object sender, PointerRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(AdminTehnicki));
+            this.Frame.Navigate(typeof(AdminObrisiUposlenog));
         }
 
         private void RelativePanel_PointerPressed_3(object sender, PointerRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(AdminDodajProizvod));
+            this.Frame.Navigate(typeof(AdminTehnicki));
         }
 
         private void RelativePanel_PointerPressed_4(object sender, PointerRoutedEventArgs e)
         {
+            this.Frame.Navigate(typeof(AdminDodajProizvod));
+        }
+
+        private void RelativePanel_PointerPressed_5(object sender, PointerRoutedEventArgs e)
+        {
             this.Frame.Navigate(typeof(AdminDodajFilm));
-        }*/
+        }
     }
 }

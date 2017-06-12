@@ -31,6 +31,7 @@ namespace ProjekatKino.ViewModels
         private DateTime datumPrikazivanja;
 
         private List<string> comoboBox;
+        private List<int> he;
         #endregion
 
        
@@ -38,6 +39,7 @@ namespace ProjekatKino.ViewModels
         public ICommand Dodaj { get; set; }
         public ICommand Proba { get; set; }
         public Projekcija p { get; set; }
+        public ICommand ideovi { get; set; }
 
         public string NazivFilma
         {
@@ -123,14 +125,33 @@ namespace ProjekatKino.ViewModels
             }
         }
 
+        public List<int> He
+        {
+            get
+            {
+                return he;
+            }
+
+            set
+            {
+                he = value;
+                NotifyPropertyChanged("He");
+            }
+        }
+
         public DodajProjekcijuViewModel()
         {
             Dodaj = new RelayCommand<object>(unosProjekcije);
             Proba = new RelayCommand<object>(unosCombo);
+            ideovi = new RelayCommand<object>(unos2);
         
         }
         IMobileServiceTable<Film> filmic = App.MobileService.GetTable<Film>();
 
+        private async void unos2(object obj)
+        {
+            for (int i = 0; i < 10; i++) He.Add(i);
+        }
         private async void unosCombo(object obj)
         {
             List<Film> film = new List<Film>();

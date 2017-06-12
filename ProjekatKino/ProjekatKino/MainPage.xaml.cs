@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using ProjekatKino.Views;
+using Windows.UI.Popups;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -32,5 +33,25 @@ namespace ProjekatKino
             {
             this.Frame.Navigate(typeof(AdminDodajProjekciju));
             }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            if (textBox.Text == "admin") this.Frame.Navigate(typeof(AdminPocetna));
+            else if(textBox.Text=="korisnik") this.Frame.Navigate(typeof(FrameKorisnik));
+            else if (textBox.Text == "") {
+                var messageDialog = new MessageDialog("Morate popuniti sva polja!");
+                messageDialog.ShowAsync();
+            }
         }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(FrameGost));
+        }
+
+        private void button29_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(FrameRegistracija));
+        }
+    }
     }
