@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using ProjekatKino.ViewModels;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -26,6 +27,7 @@ namespace ProjekatKino.Views
         public FrameKupiKartu ()
             {
             this.InitializeComponent();
+            DataContext = new KupiKartuViewModel();
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
@@ -37,6 +39,11 @@ namespace ProjekatKino.Views
                 Frame.Navigate(typeof(FrameKorisnik));
                 e.Handled = true;
                 }
+            }
+
+        private void image_Tapped (object sender, TappedRoutedEventArgs e)
+            {
+            this.Frame.Navigate(typeof(FrameKorisnik));
             }
         }
     }

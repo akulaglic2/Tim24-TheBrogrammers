@@ -59,5 +59,10 @@ namespace ProjekatKino.Views
             {
             this.Frame.Navigate(typeof(FrameFindMyMovie));
             }
+
+        private void image_Tapped (object sender, TappedRoutedEventArgs e)
+            {
+            this.Frame.Navigate(typeof(MainPage));
+            }
         }
     }

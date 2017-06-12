@@ -9,20 +9,21 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush Stretch="Fill" ImageSource="Assets/pozadina.jpg"/>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/pozadina.jpg"/>
         </Grid.Background>
-        <RelativePanel HorizontalAlignment="Left" Height="291" Margin="10,146,0,0" VerticalAlignment="Top" Width="340">
-            <Image x:Name="slikaKorisnika" Source="Assets\vasRacunIkona.png" HorizontalAlignment="Center" Height="104" Margin="10,74,-121,-78" VerticalAlignment="Top" Width="111" />
-            <TextBlock x:Name="textBlockPrezime" HorizontalAlignment="Left" TextWrapping="Wrap" Text="prezime" FontFamily="Cambria" Foreground="White" VerticalAlignment="Top" Margin="218,137,-219.333,-138.333"/>
-            <TextBlock x:Name="textBlockPrezime_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Vrsta racuna" FontFamily="Cambria" Foreground="White" VerticalAlignment="Top" Margin="189,160,-189,-161.333"/>
-            <TextBlock x:Name="textBlockPrezime_Copy1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Dodatne pogodnosti                    informacije o racunu" FontFamily="Cambria" Foreground="White" VerticalAlignment="Top" Margin="189,183,-4.333,-202.667"/>
-            <TextBlock x:Name="textBlockIme" Foreground="White" FontFamily="Cambria" HorizontalAlignment="Left" Margin="189,137,-213,-139" TextWrapping="Wrap" Text="ime" VerticalAlignment="Top" RenderTransformOrigin="2.486,-1"/>
-            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Vase Informacije" FontFamily="Cambria" Foreground="White"  VerticalAlignment="Top" Margin="59,49,-59.333,-49"/>
+        <RelativePanel HorizontalAlignment="Left" Height="465" Margin="270,185,0,0" VerticalAlignment="Top" Width="724">
+            <Image x:Name="slikaKorisnika" Source="Assets\vasRacunIkona.png" HorizontalAlignment="Center" Height="104" Margin="52,120,-163,-124" VerticalAlignment="Top" Width="111" />
+            <TextBlock x:Name="textBlockPrezime" HorizontalAlignment="Left" TextWrapping="Wrap" Text="prezime" FontFamily="Cambria" Foreground="White" VerticalAlignment="Top" Margin="203,140,-204,-141"/>
+            <TextBlock x:Name="textBlockPrezime_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Vrsta racuna" FontFamily="Cambria" Foreground="White" VerticalAlignment="Top" Margin="203,176,-203,-177"/>
+            <TextBlock x:Name="textBlockPrezime_Copy1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Dodatne pogodnosti                    informacije o racunu" FontFamily="Cambria" Foreground="White" VerticalAlignment="Top" Margin="203,210,-18,-228"/>
+            <TextBlock x:Name="textBlockIme" Foreground="White" FontFamily="Cambria" HorizontalAlignment="Left" Margin="203,106,-227,-108" TextWrapping="Wrap" Text="ime" VerticalAlignment="Top" RenderTransformOrigin="2.486,-1"/>
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Vase Informacije" FontFamily="Cambria" Foreground="White"  VerticalAlignment="Top" Margin="52,51,-52,-51"/>
         </RelativePanel>
         <Button x:Name="button" Content="" HorizontalAlignment="Left" Margin="15,55,0,0" VerticalAlignment="Top" Height="52" Width="44">
             <Button.Background>
                 <ImageBrush Stretch="Uniform" ImageSource="Assets/backIcon.png"/>
             </Button.Background>
         </Button>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="127,38,0,0" VerticalAlignment="Top" Width="100" Source="ms-appx:///Assets/backKKKKKKKKKKKK.png" Tapped="image_Tapped"/>
     </Grid>
 </Page>
