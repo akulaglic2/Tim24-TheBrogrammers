@@ -44,5 +44,6 @@
                 <ImageBrush Stretch="Uniform" ImageSource="Assets/backIcon.png"/>
             </Button.Background>
         </Button>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="123,39,0,0" VerticalAlignment="Top" Width="100" Source="ms-appx:///Assets/backKKKKKKKKKKKK.png" Tapped="image_Tapped"/>
     </Grid>
 </Page>

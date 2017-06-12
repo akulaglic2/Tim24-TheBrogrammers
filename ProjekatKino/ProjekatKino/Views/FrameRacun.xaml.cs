@@ -26,5 +26,10 @@ namespace ProjekatKino.Views
             {
             this.InitializeComponent();
             }
+
+        private void image_Tapped (object sender, TappedRoutedEventArgs e)
+            {
+            this.Frame.Navigate(typeof(FrameKorisnik));
+            }
         }
     }

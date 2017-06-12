@@ -62,5 +62,10 @@ namespace ProjekatKino.Views
             {
             this.Frame.Navigate(typeof(FrameKupiKartu));
             }
+
+        private void image_Tapped (object sender, TappedRoutedEventArgs e)
+            {
+            this.Frame.Navigate(typeof(MainPage));
+            }
         }
     }

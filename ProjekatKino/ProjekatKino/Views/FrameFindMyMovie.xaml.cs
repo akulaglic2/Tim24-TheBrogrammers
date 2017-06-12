@@ -45,5 +45,10 @@ namespace ProjekatKino.Views
                 e.Handled = true;
                 }
             }
+
+        private void image_Tapped (object sender, TappedRoutedEventArgs e)
+            {
+            this.Frame.Navigate(typeof(FrameGost)); 
+            }
         }
     }

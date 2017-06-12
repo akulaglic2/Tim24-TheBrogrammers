@@ -58,6 +58,7 @@
         <TextBox x:Name="textBoxPrezimeVlasnikaKartice" HorizontalAlignment="Left" Margin="891,392,0,0" TextWrapping="Wrap" Text="{Binding PrezimeVlasnikaKartice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="289"/>
         <TextBlock x:Name="textBlock_Copy4" Foreground="White" FontFamily="Cambria" HorizontalAlignment="Left" Margin="725,354,0,0" TextWrapping="Wrap" Text="Ime vlasnika kartice" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlock_Copy5" Foreground="White" FontFamily="Cambria" HorizontalAlignment="Left" Margin="725,406,0,0" TextWrapping="Wrap" Text="Prezime vlasnika kartice" VerticalAlignment="Top"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="130,41,0,0" VerticalAlignment="Top" Width="100" Source="ms-appx:///Assets/backKKKKKKKKKKKK.png" Tapped="image_Tapped"/>
 
 
 
