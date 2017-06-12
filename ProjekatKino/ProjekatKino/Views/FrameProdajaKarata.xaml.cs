@@ -38,5 +38,7 @@ namespace ProjekatKino.Views
                 e.Handled = true;
             }
         }
+
+        
     }
 }
