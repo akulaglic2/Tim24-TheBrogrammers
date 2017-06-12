@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjekatKino.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -26,7 +27,8 @@ namespace ProjekatKino.Views
         public AdminDodajProizvod()
         {
             this.InitializeComponent();
-
+            DataContext = new DodajProizvodViewModel();
+            DataContext = new DodajPosebniProizvodViewModel();
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;

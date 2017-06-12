@@ -24,57 +24,57 @@ namespace ProjekatKino.ViewModels
             }
 
         #region Privatni Atributi
-        private string naziv;
-        private double cijena;
-        private string velicina;
+        private string nazivPosebnog;
+        private double cijenaPosebnog;
+        private string velicinaPosebnog;
         private string sadrzaj1;
         private string sadrzaj2;
-        private string kratakOpis;
+        private string kratakOpisPosebnog;
 
 
         #endregion
 
         #region Get,Set
 
-        public string Naziv
+        public string NazivPosebnog
             {
             get
                 {
-                return naziv;
+                return nazivPosebnog;
                 }
 
             set
                 {
-                naziv = value;
-                NotifyPropertyChanged("Naziv");
+                nazivPosebnog = value;
+                NotifyPropertyChanged("NazivPosebnog");
                 }
             }
 
-        public double Cijena
+        public double CijenaPosebnog
             {
             get
                 {
-                return cijena;
+                return cijenaPosebnog;
                 }
 
             set
                 {
-                cijena = value;
-                NotifyPropertyChanged("Cijena");
+                cijenaPosebnog = value;
+                NotifyPropertyChanged("CijenaPosebnog");
                 }
             }
 
-        public string Velicina
+        public string VelicinaPosebnog
             {
             get
                 {
-                return velicina;
+                return velicinaPosebnog;
                 }
 
             set
                 {
-                velicina = value;
-                NotifyPropertyChanged("Velicina");
+                velicinaPosebnog = value;
+                NotifyPropertyChanged("VelicinaPosebnog");
                 }
             }
         public string Sadrzaj1
@@ -105,31 +105,31 @@ namespace ProjekatKino.ViewModels
                 }
             }
 
-        public string KratakOpis
+        public string KratakOpisPosebnog
             {
             get
                 {
-                return kratakOpis;
+                return kratakOpisPosebnog;
                 }
 
             set
                 {
-                kratakOpis = value;
-                NotifyPropertyChanged("KratakOpis");
+                kratakOpisPosebnog = value;
+                NotifyPropertyChanged("KratakOpisPosebnog");
                 }
             }
 
 
         #endregion
 
-        public ICommand Dodaj { get; set; }
+        public ICommand DodajPosebni { get; set; }
         public PosebnePonude posebne { get; set; }
 
 
 
         public DodajPosebniProizvodViewModel ()
             {
-            Dodaj = new RelayCommand<object>(unosProizvoda);
+            DodajPosebni = new RelayCommand<object>(unosProizvoda);
             }
 
         IMobileServiceTable<PosebnePonude> userTableObj = App.MobileService.GetTable<PosebnePonude>();
@@ -139,12 +139,12 @@ namespace ProjekatKino.ViewModels
             using (var db = new KinoDbContext())
                 {
                 // validacija unosa 
-                if (Naziv == "" || Cijena == 0 || Velicina == "" || Sadrzaj1 == "" || Sadrzaj2 == "" || KratakOpis == "")
+                if (NazivPosebnog == "" || CijenaPosebnog == 0 || VelicinaPosebnog == "" || Sadrzaj1 == "" || Sadrzaj2 == "" || KratakOpisPosebnog == "")
                     {
                     var messageDialog = new MessageDialog("Morate popuniti sva polja!");
                     await messageDialog.ShowAsync();
                     }
-                if (KratakOpis.Length < 10)
+                if (KratakOpisPosebnog.Length < 10)
                     {
                     var messageDialog = new MessageDialog("Prekratak opis!");
                     await messageDialog.ShowAsync();
@@ -154,15 +154,15 @@ namespace ProjekatKino.ViewModels
                     {
 
                     PosebnePonude kor = new PosebnePonude();
-                    kor.naziv = Naziv;
-                    kor.cijena = Cijena;
-                    kor.velicina = Velicina;
+                    kor.naziv = NazivPosebnog;
+                    kor.cijena = CijenaPosebnog;
+                    kor.velicina = VelicinaPosebnog;
                     kor.sadrzaj1 = Sadrzaj1;
                     kor.sadrzaj2 = Sadrzaj2;
-                    kor.kratakOpis = KratakOpis;
+                    kor.kratakOpis = KratakOpisPosebnog;
                     userTableObj.InsertAsync(kor);
-
-                    MessageDialog msgDialog = new MessageDialog("Uspješno ste dodali film.");
+                   
+                    MessageDialog msgDialog = new MessageDialog("Uspješno ste dodali posebni proizvod.");
                     msgDialog.ShowAsync();
                     }
 
@@ -172,19 +172,19 @@ namespace ProjekatKino.ViewModels
                     msgDialogError.ShowAsync();
                     }
 
-                var unesiProizvod = new PosebnePonude(Naziv, Cijena, Velicina, Sadrzaj1, Sadrzaj2, KratakOpis);
+                var unesiProizvod = new PosebnePonude(NazivPosebnog, CijenaPosebnog, VelicinaPosebnog, Sadrzaj1, Sadrzaj2, KratakOpisPosebnog);
                 
                 //db.posebnePonude.Add(unesiProizvod);
                 //db.SaveChanges();
                 //var message = new MessageDialog("Uspješno je unesena nova posebna ponuda", "Unos posebne ponude");
                 //await message.ShowAsync();
 
-                Naziv = string.Empty;
-                Cijena = 0;
-                Velicina = string.Empty;
+                NazivPosebnog = string.Empty;
+                CijenaPosebnog = 0;
+                VelicinaPosebnog = string.Empty;
                 Sadrzaj1 = string.Empty;
                 Sadrzaj2 = string.Empty;
-                KratakOpis = string.Empty;
+                KratakOpisPosebnog = string.Empty;
 
 
                 }

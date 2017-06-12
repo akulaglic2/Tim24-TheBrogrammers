@@ -1,4 +1,5 @@
-﻿using ProjekatKino.Helper;
+﻿using Microsoft.WindowsAzure.MobileServices;
+using ProjekatKino.Helper;
 using ProjekatKino.Models;
 using System;
 using System.Collections.Generic;
@@ -79,7 +80,7 @@ namespace ProjekatKino.ViewModels
         public ICommand Dodaj { get; set; }
         public Proizvod proizvod { get; set; }
 
-
+        IMobileServiceTable<Proizvod> userTableObj = App.MobileService.GetTable<Proizvod>();
 
         public DodajProizvodViewModel ()
             {
@@ -107,13 +108,28 @@ namespace ProjekatKino.ViewModels
                     var messageDialog = new MessageDialog("Morate popuniti sva polja!");
                     await messageDialog.ShowAsync();
                     }
+                try
+                {
+                    Proizvod p = new Proizvod();
+                    p.naziv = Naziv;
+                    p.cijena = Cijena;
+                    p.vrsta = Vrsta;
+                    userTableObj.InsertAsync(p);
+                    MessageDialog msgDialog = new MessageDialog("Uspješno ste unijeli novi proizvod.");
+                    msgDialog.ShowAsync();
+                }
+                catch (Exception ex)
+                {
+                    MessageDialog msgDialogError = new MessageDialog("Error : " + ex.ToString());
+                    msgDialogError.ShowAsync();
+                }
 
                 var unesiProizvod = new Proizvod(Naziv, Cijena, Vrsta);
-                db.proizvodi.Add(unesiProizvod);
+               /* db.proizvodi.Add(unesiProizvod);
                 db.SaveChanges();
 
                 var message = new MessageDialog("Uspješno je unesen novi proizvod", "Unos proizvoda");
-                await message.ShowAsync();
+                await message.ShowAsync();*/
 
                 Naziv = string.Empty;
                 Cijena = 0;

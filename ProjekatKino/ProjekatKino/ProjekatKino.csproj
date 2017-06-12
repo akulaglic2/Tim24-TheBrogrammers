@@ -113,6 +113,7 @@
     <Compile Include="UserControls\MyUserControl1.xaml.cs">
       <DependentUpon>MyUserControl1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\DodajProjekcijuViewModel.cs" />
     <Compile Include="ViewModels\GpsViewModel.cs" />
     <Compile Include="ViewModels\IKupovina.cs" />
     <Compile Include="Models\Karta.cs" />
@@ -139,6 +140,9 @@
     </Compile>
     <Compile Include="Views\AdminDodajProizvod.xaml.cs">
       <DependentUpon>AdminDodajProizvod.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminDodajProjekciju.xaml.cs">
+      <DependentUpon>AdminDodajProjekciju.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AdminDodajUposlenog.xaml.cs">
       <DependentUpon>AdminDodajUposlenog.xaml</DependentUpon>
@@ -235,6 +239,7 @@
     <Content Include="Assets\posebni.png" />
     <Content Include="Assets\posebninovo.png" />
     <Content Include="Assets\pozadina.jpg" />
+    <Content Include="Assets\prodzekcija.png" />
     <Content Include="Assets\remove.png" />
     <Content Include="Assets\vasRacunIkona.png" />
     <Content Include="Properties\Default.rd.xml" />
@@ -264,6 +269,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AdminDodajProizvod.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AdminDodajProjekciju.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

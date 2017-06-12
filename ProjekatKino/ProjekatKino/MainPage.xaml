@@ -8,14 +8,21 @@
     mc:Ignorable="d">
 
     <Grid>
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="Black" Offset="0"/>
-                <GradientStop Color="#FFB63232" Offset="1"/>
-            </LinearGradientBrush>
-        </Grid.Background>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="125,396,0,0" Tapped="button_Tapped"/>
 
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/kino1.png"/>
+        </Grid.Background>
+        <RelativePanel HorizontalAlignment="Left" Height="231" Margin="45,172,0,0" VerticalAlignment="Top" Width="370">
+            <RelativePanel.Background>
+                <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/logo1.png"/>
+            </RelativePanel.Background>
+        </RelativePanel>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="500,406,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="271"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="500,340,0,0" TextWrapping="Wrap" Text="LOGIN" VerticalAlignment="Top" FontFamily="Cambria" FontSize="35"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="500,466,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="271"/>
+        <Button x:Name="button" Content="Prijavi se" HorizontalAlignment="Left" Margin="660,616,0,0" VerticalAlignment="Top" Width="111" BorderBrush="#FF3B07C5" Background="#33E2E1F0" FontSize="20" FontFamily="Cambria" FontWeight="Bold" />
+        <Button x:Name="button29" Content="Registruj se" HorizontalAlignment="Left" Margin="1090,172,0,0" VerticalAlignment="Top" Height="44" Width="135" Background="#33F9F7F7" BorderBrush="#FFF7F4F4" FontSize="20" FontFamily="Cambria" FontWeight="Bold"/>
+        <Button x:Name="button1" Content="Gost" HorizontalAlignment="Left" Margin="500,616,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.338,-0.625" Width="122" FontFamily="Cambria" FontSize="20" Background="#33F3E9E9" BorderBrush="#FF0C053A" FontWeight="Bold"/>
 
     </Grid>
 </Page>
