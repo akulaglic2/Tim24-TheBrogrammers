@@ -22,6 +22,11 @@
             </RelativePanel>
             <DatePicker HorizontalAlignment="Left" VerticalAlignment="Top" Margin="584,338,0,0" />
             <Button x:Name="button" Content="Dodaj" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="908,610,0,0" Background="#33E8E0E0" BorderBrush="#FFE8E2E2" FontFamily="Cambria" FontSize="20" FontWeight="Bold"/>
+            <RelativePanel HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" PointerPressed="RelativePanel_PointerPressed">
+                <RelativePanel.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/backKKKKKKKKKKKK.png"/>
+                </RelativePanel.Background>
+            </RelativePanel>
 
         </Grid>
     </ScrollViewer>

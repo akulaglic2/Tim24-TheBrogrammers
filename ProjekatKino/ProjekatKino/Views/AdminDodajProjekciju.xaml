@@ -28,6 +28,12 @@
         </ComboBox>
         <TextBlock x:Name="textBlock5" HorizontalAlignment="Left" Margin="191,488,0,0" TextWrapping="Wrap" Text="ID kino dvorane" VerticalAlignment="Top" FontFamily="Cambria" FontSize="24"/>
         <Button x:Name="button" Content="Dodaj" HorizontalAlignment="Left" Margin="627,642,0,0" VerticalAlignment="Top" Height="38" Width="99" Background="#33F0E2E2" BorderBrush="#FFE8DFDF"  FontFamily="Cambria" FontWeight="Bold" FontSize="20"/>
+        <RelativePanel HorizontalAlignment="Left" Height="100" Margin="34,31,0,0" VerticalAlignment="Top" Width="100" PointerPressed="RelativePanel_PointerPressed">
+            <RelativePanel.Background>
+                <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/backKKKKKKKKKKKK.png"/>
+            </RelativePanel.Background>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Stroke="Black" Width="0"/>
+        </RelativePanel>
 
     </Grid>
 </Page>

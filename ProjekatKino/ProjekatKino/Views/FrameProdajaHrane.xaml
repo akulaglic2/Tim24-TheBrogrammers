@@ -23,6 +23,11 @@
             <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="896,331,0,0" TextWrapping="Wrap" Text="Cijena" VerticalAlignment="Top" Height="29" Width="272"/>
             <Button x:Name="button" Content="Prodaj" HorizontalAlignment="Left" Margin="999,608,0,0" VerticalAlignment="Top" Height="62" Width="137" FontFamily="Cambria" FontSize="24" FontWeight="Bold" Background="#33F7EFEF" BorderBrush="#FFFBEDED" RenderTransformOrigin="0.613,-0.919"/>
             <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="896,266,0,0" TextWrapping="Wrap" Text="Cijena" VerticalAlignment="Top" FontFamily="Cambria" FontSize="24"/>
+            <RelativePanel HorizontalAlignment="Left" Height="100" Margin="28,30,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.14,0.12" PointerPressed="RelativePanel_PointerPressed">
+                <RelativePanel.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/backKKKKKKKKKKKK.png"/>
+                </RelativePanel.Background>
+            </RelativePanel>
 
         </Grid>
     </ScrollViewer>

@@ -40,6 +40,11 @@
             <TextBlock x:Name="textBlock4_Copy3" HorizontalAlignment="Left" Margin="630,413,0,0" TextWrapping="Wrap" Text="Sadrzaj" VerticalAlignment="Top" Height="32" Width="59"/>
             <TextBlock x:Name="textBlock5_Copy1" HorizontalAlignment="Left" Margin="630,533,0,0" TextWrapping="Wrap" Text="Cijena" VerticalAlignment="Top" Height="32" Width="59"/>
             <TextBlock x:Name="textBlock5_Copy2" HorizontalAlignment="Left" Margin="999,375,0,0" TextWrapping="Wrap" Text="Kratak opis" VerticalAlignment="Top" Height="32" Width="59"/>
+            <RelativePanel HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="44,32,0,0" PointerPressed="RelativePanel_PointerPressed">
+                <RelativePanel.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/backKKKKKKKKKKKK.png"/>
+                </RelativePanel.Background>
+            </RelativePanel>
 
         </Grid>
     </ScrollViewer>

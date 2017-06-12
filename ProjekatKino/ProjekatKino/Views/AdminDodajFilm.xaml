@@ -17,7 +17,7 @@
                 <RowDefinition Height="21*"/>
                 <RowDefinition Height="152*"/>
             </Grid.RowDefinitions>
-            <RelativePanel HorizontalAlignment="Left" Height="138" Margin="58,286,0,0" VerticalAlignment="Top" Width="148" Grid.RowSpan="3">
+            <RelativePanel HorizontalAlignment="Left" Height="138" Margin="58,253,0,0" VerticalAlignment="Top" Width="148" Grid.RowSpan="2">
                 <RelativePanel.Background>
                     <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/AddFilm.png"/>
                 </RelativePanel.Background>
@@ -48,12 +48,17 @@
                     FontWeight="Bold" 
                     Tapped="button_Tapped" 
                     Command="{Binding Dodaj}"/>
-            
+
             <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="292,286,0,0" TextWrapping="Wrap" Text="Naziv filma" VerticalAlignment="Top" Height="28" Width="99"/>
             <TextBlock x:Name="textBlock2_Copy" HorizontalAlignment="Left" Margin="292,345,0,0" TextWrapping="Wrap" Text="Zanr" VerticalAlignment="Top" Height="28" Width="99"/>
             <TextBlock x:Name="textBlock2_Copy1" HorizontalAlignment="Left" Margin="292,18,0,0" TextWrapping="Wrap" Text="Reziser" VerticalAlignment="Top" Height="28" Width="99" Grid.Row="1" Grid.RowSpan="2"/>
             <TextBlock x:Name="textBlock2_Copy2" HorizontalAlignment="Left" Margin="292,38,0,0" TextWrapping="Wrap" Text="Duzina trajanja" VerticalAlignment="Top" Height="28" Width="99" Grid.Row="2"/>
             <TextBlock x:Name="textBlock2_Copy3" HorizontalAlignment="Left" Margin="918,253,0,0" TextWrapping="Wrap" Text="Kratak opis filma" VerticalAlignment="Top" Height="28" Width="99"/>
+            <RelativePanel HorizontalAlignment="Left" Height="74" Margin="1144,56,0,0" VerticalAlignment="Top" Width="99" RenderTransformOrigin="1.12,0.52" PointerPressed="RelativePanel_PointerPressed">
+                <RelativePanel.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/backIcon.png"/>
+                </RelativePanel.Background>
+            </RelativePanel>
         </Grid>
     </ScrollViewer>
 </Page>

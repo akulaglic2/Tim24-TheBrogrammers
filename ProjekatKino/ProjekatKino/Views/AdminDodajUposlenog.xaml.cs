@@ -41,5 +41,10 @@ namespace ProjekatKino.Views
                 e.Handled = true;
                 }
             }
+
+        private void RelativePanel_PointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AdminPocetna));
         }
+    }
     }
