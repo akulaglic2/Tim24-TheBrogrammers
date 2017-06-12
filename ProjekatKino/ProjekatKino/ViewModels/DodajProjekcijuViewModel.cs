@@ -3,6 +3,7 @@ using ProjekatKino.Helper;
 using ProjekatKino.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ using Windows.UI.Popups;
 
 namespace ProjekatKino.ViewModels
 {
- public   class DodajProjekcijuViewModel
+    public class DodajProjekcijuViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged(String info)
@@ -30,11 +31,11 @@ namespace ProjekatKino.ViewModels
         private int idKinoDvorane;
         private DateTime datumPrikazivanja;
 
-        private List<string> comoboBox;
+        private ObservableCollection<string> comboBoxOptions;
         private List<int> he;
         #endregion
 
-       
+
 
         public ICommand Dodaj { get; set; }
         public ICommand Proba { get; set; }
@@ -111,19 +112,7 @@ namespace ProjekatKino.ViewModels
             }
         }
 
-        public List<string> ComoboBox
-        {
-            get
-            {
-                return comoboBox;
-            }
-
-            set
-            {
-                comoboBox = value;
-                NotifyPropertyChanged("ComboBox");
-            }
-        }
+      
 
         public List<int> He
         {
@@ -139,12 +128,26 @@ namespace ProjekatKino.ViewModels
             }
         }
 
+        public ObservableCollection<string> ComboBoxOptions
+        {
+            get
+            {
+                return comboBoxOptions;
+            }
+
+            set
+            {
+                comboBoxOptions = value;
+                NotifyPropertyChanged("ComboBoxOptions");
+            }
+        }
+
         public DodajProjekcijuViewModel()
         {
             Dodaj = new RelayCommand<object>(unosProjekcije);
             Proba = new RelayCommand<object>(unosCombo);
             ideovi = new RelayCommand<object>(unos2);
-        
+
         }
         IMobileServiceTable<Film> filmic = App.MobileService.GetTable<Film>();
 
@@ -156,9 +159,9 @@ namespace ProjekatKino.ViewModels
         {
             List<Film> film = new List<Film>();
             film = await filmic.ToListAsync();
-            foreach(Film f in film)
+            foreach (Film f in film)
             {
-                ComoboBox.Add(f.naziv);
+                ComboBoxOptions.Add(f.naziv);
             }
 
         }
@@ -175,43 +178,45 @@ namespace ProjekatKino.ViewModels
                     var messageDialog = new MessageDialog("Morate popuniti sva polja!");
                     await messageDialog.ShowAsync();
                 }
-                
-                try
+                else
                 {
+                    try
+                    {
 
-                    Projekcija pr = new Projekcija();
+                        Projekcija pr = new Projekcija();
 
-               pr.vrijemePrikazivanja = VrijemePrikazivanja;
-               pr.idKinoDvorane = IdKinoDvorane;
-               pr.nazivFilma = NazivFilma;
-               pr.datumPrikazivanja = DatumPrikazivanja;
+                        pr.vrijemePrikazivanja = VrijemePrikazivanja;
+                        pr.idKinoDvorane = IdKinoDvorane;
+                        pr.nazivFilma = NazivFilma;
+                        pr.datumPrikazivanja = DatumPrikazivanja;
 
-        MessageDialog msgDialog = new MessageDialog("Uspješno ste dodali projekciju.");
-                    msgDialog.ShowAsync();
+                        MessageDialog msgDialog = new MessageDialog("Uspješno ste dodali projekciju.");
+                        msgDialog.ShowAsync();
+                    }
+
+                    catch (Exception ex)
+                    {
+                        MessageDialog msgDialogError = new MessageDialog("Error : " + ex.ToString());
+                        msgDialogError.ShowAsync();
+                    }
+
+
+
+
+                    var unesiProjekciju = new Projekcija(VrijemePrikazivanja, IdKinoDvorane, IdFilma, NazivFilma, DatumPrikazivanja);
+                    //db.filmovi.Add(unesiFilm);
+                    //db.SaveChanges();
+
+                    //var message = new MessageDialog("Uspješno je unesen novi film", "Unos filma");
+                    //await message.ShowAsync();
+
+                    NazivFilma = string.Empty;
+                    VrijemePrikazivanja = DateTime.Now;
+                    IdKinoDvorane = 0;
+                    DatumPrikazivanja = DateTime.Now;
+
+
                 }
-
-                catch (Exception ex)
-                {
-                    MessageDialog msgDialogError = new MessageDialog("Error : " + ex.ToString());
-                    msgDialogError.ShowAsync();
-                }
-
-
-
-
-                var unesiProjekciju = new Projekcija(VrijemePrikazivanja, IdKinoDvorane, IdFilma, NazivFilma, DatumPrikazivanja);
-                //db.filmovi.Add(unesiFilm);
-                //db.SaveChanges();
-
-                //var message = new MessageDialog("Uspješno je unesen novi film", "Unos filma");
-                //await message.ShowAsync();
-
-                NazivFilma = string.Empty;
-                VrijemePrikazivanja = DateTime.Now;
-                IdKinoDvorane = 0;
-                DatumPrikazivanja = DateTime.Now;
-                
-
             }
         }
     }
