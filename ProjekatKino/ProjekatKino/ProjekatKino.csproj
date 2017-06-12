@@ -210,11 +210,14 @@
     <Content Include="Assets\add1.png" />
     <Content Include="Assets\AddFilm.png" />
     <Content Include="Assets\adfilm.png" />
+    <Content Include="Assets\avengers.png" />
     <Content Include="Assets\back.png" />
     <Content Include="Assets\backIcon.png" />
     <Content Include="Assets\backKKKKKKKKKKKK.png" />
+    <Content Include="Assets\beauty_beast.jpg" />
     <Content Include="Assets\cinemaLogoIk.jpg" />
     <Content Include="Assets\dodajicon.png" />
+    <Content Include="Assets\external.jpg" />
     <Content Include="Assets\hrana.jpg" />
     <Content Include="Assets\hrananovo.png" />
     <Content Include="Assets\icon-person-add-512.png" />
@@ -228,6 +231,7 @@
     <Content Include="Assets\logo.png" />
     <Content Include="Assets\logo1.png" />
     <Content Include="Assets\logoFit.png" />
+    <Content Include="Assets\maxresdefault.jpg" />
     <Content Include="Assets\mjesto.png" />
     <Content Include="Assets\neka slika.png" />
     <Content Include="Assets\obrisi.png" />
@@ -241,6 +245,7 @@
     <Content Include="Assets\pozadina.jpg" />
     <Content Include="Assets\prodzekcija.png" />
     <Content Include="Assets\remove.png" />
+    <Content Include="Assets\the_fate_of_the_furious.jpg" />
     <Content Include="Assets\vasRacunIkona.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />

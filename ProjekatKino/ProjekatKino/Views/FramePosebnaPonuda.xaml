@@ -12,56 +12,57 @@
             <ImageBrush ImageSource="ms-appx:///Assets/pozadina.jpg" Stretch="Fill"/>
         </Grid.Background>
 
-        <ScrollViewer HorizontalAlignment="Left" Height="492" Margin="373,182,0,0" VerticalAlignment="Top" Width="484" ZoomMode="Enabled">
+       
 
-            <ListView x:Name="listViewPosebnaPonuda" Height="469" Width="261">
+            <ListView x:Name="listViewPosebnaPonuda" Height="469" Width="261" Margin="496,177,523,74">
                 <ListViewItem Content="Maxi Combo Paket" Foreground="White" Height="60" BorderBrush="White" Width="261">
                     <ListViewItem.Background>
-                        <ImageBrush AlignmentX="Right" Stretch="Uniform" ImageSource="Assets/popcornLogo.png" Opacity="0.6"/>
+                        <ImageBrush AlignmentX="Right" Stretch="Uniform" ImageSource="ms-appx:///Assets/popcornLogo.png" Opacity="0.6"/>
                     </ListViewItem.Background>
                 </ListViewItem>
                 <ListViewItem Content="Midi Combo Paket" Foreground="White" Height="60" BorderBrush="White">
                     <ListViewItem.Background>
-                        <ImageBrush AlignmentX="Right" Stretch="Uniform" ImageSource="Assets/popcornLogo.png" Opacity="0.6"/>
+                        <ImageBrush AlignmentX="Right" Stretch="Uniform" ImageSource="ms-appx:///Assets/popcornLogo.png" Opacity="0.6"/>
                     </ListViewItem.Background>
                 </ListViewItem>
                 <ListViewItem Content="Mini Combo Paket" Foreground="White" Height="60" BorderBrush="White">
                     <ListViewItem.Background>
-                        <ImageBrush AlignmentX="Right" Stretch="Uniform" ImageSource="Assets/popcornLogo.png" Opacity="0.6"/>
+                        <ImageBrush AlignmentX="Right" Stretch="Uniform" ImageSource="ms-appx:///Assets/popcornLogo.png" Opacity="0.6"/>
                     </ListViewItem.Background>
                 </ListViewItem>
                 <ListViewItem Content="Fit Paket" Foreground="White" Height="60" BorderBrush="White">
                     <ListViewItem.Background>
-                        <ImageBrush AlignmentX="Right" Stretch="Uniform" ImageSource="Assets/logoFit.png" Opacity="0.6"/>
+                        <ImageBrush AlignmentX="Right" Stretch="Uniform" ImageSource="ms-appx:///Assets/popcornLogo.png" Opacity="0.6"/>
                     </ListViewItem.Background>
                 </ListViewItem>
                 <ListViewItem Content="Family Day" Foreground="White" Height="60" BorderBrush="White">
                     <ListViewItem.Background>
-                        <ImageBrush AlignmentX="Right" Stretch="Uniform" ImageSource="Assets/cinemaLogoIk.jpg" Opacity="0.6"/>
+                        <ImageBrush AlignmentX="Right" Stretch="Uniform" ImageSource="ms-appx:///Assets/popcornLogo.png" Opacity="0.6"/>
                     </ListViewItem.Background>
                 </ListViewItem>
                 <ListViewItem Content="Student Monday" Foreground="White" Height="60" BorderBrush="White">
                     <ListViewItem.Background>
-                        <ImageBrush AlignmentX="Right" Stretch="Uniform" ImageSource="Assets/cinemaLogoIk.jpg" Opacity="0.6"/>
+                        <ImageBrush AlignmentX="Right" Stretch="Uniform" ImageSource="ms-appx:///Assets/popcornLogo.png" Opacity="0.6"/>
                     </ListViewItem.Background>
                 </ListViewItem>
                 <ListViewItem Content="Ladies Night" Foreground="White" Height="60" BorderBrush="White" RenderTransformOrigin="0.774,0.55">
                     <ListViewItem.Background>
-                        <ImageBrush AlignmentX="Right" Stretch="Uniform" ImageSource="Assets\cinemaLogoIk.jpg" Opacity="0.6"/>
+                        <ImageBrush AlignmentX="Right" Stretch="Uniform" ImageSource="ms-appx:///Assets/popcornLogo.png" Opacity="0.6"/>
                     </ListViewItem.Background>
                 </ListViewItem>
                 <ListViewItem Content="Gentleman's night" Foreground="White" Height="60" BorderBrush="White">
                     <ListViewItem.Background>
-                        <ImageBrush AlignmentX="Right" Stretch="Uniform" ImageSource="Assets/cinemaLogoIk.jpg" Opacity="0.6"/>
+                        <ImageBrush AlignmentX="Right" Stretch="Uniform" ImageSource="ms-appx:///Assets/popcornLogo.png" Opacity="0.6"/>
                     </ListViewItem.Background>
                 </ListViewItem>
 
             </ListView>
-        </ScrollViewer>
+    
         <Button x:Name="button" Content="" HorizontalAlignment="Left" Margin="10,53,0,0" VerticalAlignment="Top" Height="52" Width="44" RenderTransformOrigin="-0.316,0.481">
             <Button.Background>
                 <ImageBrush Stretch="Uniform" ImageSource="Assets/backIcon.png"/>
             </Button.Background>
         </Button>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="122,42,0,0" VerticalAlignment="Top" Width="100" Source="ms-appx:///Assets/backKKKKKKKKKKKK.png" Tapped="image_Tapped"/>
     </Grid>
 </Page>
