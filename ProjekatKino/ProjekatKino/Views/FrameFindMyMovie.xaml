@@ -40,7 +40,7 @@
             <ComboBoxItem Content="5"/>
         </ComboBox>
         <maps:MapControl x:Name="mapa" Center="{Binding TrenutnaLokacija, Mode=OneWay}" Height="300" VerticalAlignment="Bottom" />
-        <TextBlock Text="{Binding Adresa}" Grid.Row="0" Margin="711,288,88,349" Foreground="White" FontFamily="Cambria"/>
+        <TextBlock Text="{Binding Adresa}" Grid.Row="0" Margin="711,288,28,349" Foreground="White" FontFamily="Cambria"/>
         <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="121,38,0,0" VerticalAlignment="Top" Width="100" Source="ms-appx:///Assets/backKKKKKKKKKKKK.png" Tapped="image_Tapped"/>
 
     </Grid>

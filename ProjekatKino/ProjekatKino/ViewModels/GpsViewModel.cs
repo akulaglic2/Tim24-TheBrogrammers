@@ -15,6 +15,7 @@ namespace ProjekatKino.ViewModels
     public class GpsViewModel : INotifyPropertyChanged
         {
         private Geopoint trenutnaLokacija;
+        public string dvorana { get; set; }
         public Geopoint lokacijaKina { get; set; }
         public Geopoint TrenutnaLokacija
             {
@@ -55,6 +56,9 @@ namespace ProjekatKino.ViewModels
             }
         public async void dajLokaciju ()
             {
+
+
+
             Geoposition pos = null;
             // da li se smije uzeti lokacija, trazi se odobrenje od korisnika (takodjer treba i capability)
             var accessStatus = await Geolocator.RequestAccessAsync();
@@ -68,16 +72,21 @@ namespace ProjekatKino.ViewModels
             TrenutnaLokacija = pos.Coordinate.Point;
             Lokacija = "Geolokacija Lat: " + TrenutnaLokacija.Position.Latitude + " Lng: " +
            TrenutnaLokacija.Position.Longitude;
+
+            dvorana = (Math.Round(GetDistanceInKm(43.8562586, 18.4130763, TrenutnaLokacija.Position.Latitude, TrenutnaLokacija.Position.Longitude),2)).ToString();
+
+
             // uzeti adresu na osnovu GeoTacke
             MapLocationFinderResult result = await
             MapLocationFinder.FindLocationsAtAsync(pos.Coordinate.Point);
-            
+
             // Nadje li adresu ispisi je
             if (result.Status == MapLocationFinderStatus.Success)
                 {
-                Adresa = "Vaša lokacija je " + result.Locations[0].Address.Street;
+                Adresa = "Vasa udaljenost od kina je " + dvorana + " km. Adresa najblize dvorane je : Valtera Perica ";
+                //Adresa = "Vaša lokacija je " + result.Locations[0].Address.Street;
                 }
-            
+
             //nacrtati pravougaonik na mapi za oblast gdje bi korisnik mogao biti
             double centerLatitude = Mapa.Center.Position.Latitude;
             double centerLongitude = Mapa.Center.Position.Longitude;
@@ -109,7 +118,24 @@ namespace ProjekatKino.ViewModels
 
 
 
+        double GetDistanceInKm (double lat1, double lon1, double lat2, double lon2)
+            {
+            var R = 6371d;
+            var dLat = Deg2Rad(lat2 - lat1);
+            var dLon = Deg2Rad(lon2 - lon1);
+            var a =
+              Math.Sin(dLat / 2d) * Math.Sin(dLat / 2d) +
+              Math.Cos(Deg2Rad(lat1)) * Math.Cos(Deg2Rad(lat2)) *
+              Math.Sin(dLon / 2d) * Math.Sin(dLon / 2d);
+            var c = 2d * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1d - a));
+            var d = R * c;
+            return d;
+            }
 
+        double Deg2Rad (double deg)
+            {
+            return deg * (Math.PI / 180d);
+            }
 
 
 
